@@ -26,6 +26,8 @@ const Pepe = new Usuario({nombre: "Pepe", apellido: "Monje", libros: [], mascota
 
 console.log(Pepe.getFullName())
 Pepe.addMascota('Sunmi')
+Pepe.addMascota('Simon')
+Pepe.addMascota('Turbina')
 console.log(Pepe.countMascotas())
 Pepe.addBook('Le Rouge et le Noir', 'Stendhal')
 Pepe.addBook('1984', 'George Orwell')
