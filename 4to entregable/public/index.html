@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Restful</title>
+</head>
+<body>
+    <style>
+        form{
+            display:flex;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 30%;
+        }
+    </style>
+    <form action="/api/productos" method="POST">
+        <label for="title">Nombre de producto</label><input type="text" name="title">
+        <label for="price">Precio</label><input type="number" name="price">
+        <label for="thumbnail">URL imagen</label><input type="url" name="thumbnail">
+        <input type="submit" value="send">
+    </form>
+</body>
+</html>
