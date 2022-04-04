@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('./partials/head.ejs');%>
+  <body class="container bg-dark">
+    <%-include('./partials/nav.ejs');%>
+
+    <% if (listElem.length == 0) { %>
+    <h2 class="alert-danger p-2">No se encontraron datos</h2>
+    <% } else { %>
+    <h2 class="text-success mt-4">Productos cargados</h2>    
+    <table class="table text-success">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Título</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% listElem.forEach(elem => { %>
+        <tr>
+          <th scope="row"><%= elem.id %></th>
+          <td><%= elem.title %></td>
+          <td><%= elem.price %></td>
+          <td><img src="<%= elem.thumbnail %>" alt="<%= elem.thumbnail %>" width="75"></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } %>
+    <%-include('./partials/scptBS.ejs');%>
+  </body>
+</html>

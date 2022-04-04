@@ -1,0 +1,25 @@
+{{#if listaProductos }}
+<h2 class="text-success mt-4">Productos cargados</h2>  
+<table class="table text-success">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Título</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Imagen</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each list}}
+              <tr>
+                  <th scope="row">{{this.id}}</th>
+                  <td>{{this.title}}</td>
+                  <td>{{this.price}}</td>
+                  <td><img src="{{this.thumbnail}}" alt="{{this.thumbnail}}" width="75"></td>
+                </tr>
+          {{/each}}      
+        </tbody>
+      </table>
+  {{else}}
+    <h2 class="alert-danger p-2">No se encontraron datos</h2>  
+{{/if}}

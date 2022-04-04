@@ -1,0 +1,25 @@
+<html lang="es">
+  <%-include('./partials/head.ejs');%>
+  <body class="container bg-dark">
+    <%-include('./partials/nav.ejs');%>
+    <h2 class="text-primary mt-2">Ingresar datos del producto</h2>
+    <form action="/productos" method="post">
+      <div class="mb-3">
+        <label for="title" class="form-label text-success">Nombre</label>
+        <input type="text" class="form-control" name="title" required />
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label text-success">Precio</label>
+        <input type="number" class="form-control" name="price" required />
+      </div>
+      <div class="mb-3">
+        <label for="thumbnail" class="form-label text-success"
+          >URL Imagen</label
+        >
+        <input type="url" class="form-control" name="thumbnail" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Cargar!</button>
+    </form>
+    <%-include('./partials/scptBS.ejs');%>
+  </body>
+</html>
