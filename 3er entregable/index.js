@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 app.get('/', (req, res)=>{
-    res.send(`<h1>Bienvenidos al server de express</h1>`)
+    res.send(`<h1>Bienvenidos al server de express, las rutas para acceder a esta prueba son /products y /productRandom</h1>`)
 })
 
 app.get('/products', (req, res)=>{
