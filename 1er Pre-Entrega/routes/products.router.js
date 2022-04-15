@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import ApiRestful from '../API/functions.js';
+import FileHandler from '../API/fileHandler.js';
 
 const productsRouter = Router()
 
-const object = new ApiRestful()
+const storageProducts = new FileHandler('products.json')
 
 // Desc     get product by id.
 // route    GET /api/productos/:id
@@ -12,11 +12,13 @@ const object = new ApiRestful()
 productsRouter.get('/:id?', (req, res)=>{
     const id = req.params.id;
     if(id){
-        const product = object.getObjectById(id);
-        (product.length > 0) ? res.json(product) : res.status(404).json({error: 'No se encontró el producto'})
+        storageProducts.getById(id)
+        .then(product => res.send(product))
+        .catch(err => res.status(400).send(err))
     }else{
-        const product = object.getObjects();
-        (product.length > 0) ? res.json(product) : res.status(404).json({error: 'No se encontraron los productos'})
+        storageProducts.getAllFrom()
+        .then(products => res.send(products))
+        .catch(err => res.json(err))
     }
 })
 
@@ -27,8 +29,8 @@ productsRouter.get('/:id?', (req, res)=>{
 
 productsRouter.post('/', (req, res)=>{
     const product = req.body
-    if(product.title && product.price && product.thumbnail){
-        object.addObject(product)
+    if(product.title && product.price && product.thumbnail && product.description && product.code && product.stock){
+        storageProducts.save(product)
         res.json(product)
     }else{
         res.status(400).json({error: 'Faltan datos'})
@@ -41,8 +43,8 @@ productsRouter.post('/', (req, res)=>{
 
 
 productsRouter.put('/:id', (req, res)=>{
-    const product = object.updateObjectById(req.params.id, req.body);
-    (product != undefined) ? res.json(product) : res.status(404).json({error: 'No se encontró el producto a borrar'})
+    const product = storageProducts.updateProductById(req.params.id, req.body);
+    (product != undefined) ? res.json(res.body) : res.status(404).json({error: 'No se encontró el producto a modificar'})
 })
 
 // Desc     delete product
@@ -51,7 +53,7 @@ productsRouter.put('/:id', (req, res)=>{
 
 
 productsRouter.delete('/:id', (req, res)=>{
-    const product = object.deleteObjectById(req.params.id);
+    const product = storageProducts.deleteProductById(req.params.id);
     (product != undefined) ? res.json(product) : res.status(404).json({error: 'No se encontró el producto a borrar'})
 })
 

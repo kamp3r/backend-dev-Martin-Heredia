@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Ferro Carril Oeste",
+    "price": "invaluable",
+    "thumbnail": "image.jpg",
+    "description": "Equipo Campeon del Nacional 82",
+    "code": "1332",
+    "stock": "5",
+    "id": 1
+  },
+  {
+    "title": "Platense",
+    "price": "invaluable",
+    "thumbnail": "image.jpg",
+    "description": "Los Putos de SAAVEDRA",
+    "code": "1332",
+    "stock": "1",
+    "id": 2
+  }
+]
