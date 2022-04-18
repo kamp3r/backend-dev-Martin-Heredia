@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "date": "Mon Apr 18 2022 16:16:59 GMT-0300 (hora estándar de Argentina)",
+    "products": [
+      {
+        "id": 3,
+        "title": "Empates",
+        "price": "Una garcha",
+        "thumbnail": "image.jpg",
+        "description": "Equipo Descendido",
+        "code": "1332",
+        "stock": "1",
+        "date": "Sun Apr 17 2022 21:46:09 GMT-0300 (hora estándar de Argentina)"
+      }
+    ]
+  }
+]

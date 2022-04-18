@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Empates",
+    "price": "Una garcha",
+    "thumbnail": "image.jpg",
+    "description": "Equipo Descendido",
+    "code": "1332",
+    "stock": "1",
+    "date": "Sun Apr 17 2022 21:46:09 GMT-0300 (hora estándar de Argentina)"
+  },
+  {
+    "id": 2,
+    "title": "Empates",
+    "price": "Una garcha",
+    "thumbnail": "image.jpg",
+    "description": "Equipo Descendido",
+    "code": "1332",
+    "stock": "1",
+    "date": "Sun Apr 17 2022 21:46:09 GMT-0300 (hora estándar de Argentina)"
+  },
+  {
+    "id": 3,
+    "title": "Empates",
+    "price": "Una garcha",
+    "thumbnail": "image.jpg",
+    "description": "Equipo Descendido",
+    "code": "1332",
+    "stock": "1",
+    "date": "Sun Apr 17 2022 21:46:09 GMT-0300 (hora estándar de Argentina)"
+  },
+  {
+    "id": 4,
+    "title": "Empates",
+    "price": "Una garcha",
+    "thumbnail": "image.jpg",
+    "description": "Equipo Descendido",
+    "code": "1332",
+    "stock": "1",
+    "date": "Sun Apr 17 2022 21:46:09 GMT-0300 (hora estándar de Argentina)"
+  },
+  {
+    "id": 5,
+    "title": "Empates",
+    "price": "Una garcha",
+    "thumbnail": "image.jpg",
+    "description": "Equipo Descendido",
+    "code": "1332",
+    "stock": "1",
+    "date": "Sun Apr 17 2022 21:46:09 GMT-0300 (hora estándar de Argentina)"
+  }
+]

@@ -1,24 +1,22 @@
 import { Router } from 'express';
-import FileHandler from '../API/fileHandler.js';
-
+import ProductHandler from '../API/ProductHandler.js';
 const productsRouter = Router()
 
-const storageProducts = new FileHandler('products.json')
+const storageProducts = new ProductHandler('db/products.json')
 
 // Desc     get product by id.
 // route    GET /api/productos/:id
 // access   Private
 
-productsRouter.get('/:id?', (req, res)=>{
+productsRouter.get('/:id?', async(req, res)=>{
     const id = req.params.id;
-    if(id){
+    if(await storageProducts.getById(id) == undefined){
+        return res.json(await storageProducts.getAllProducts())
+    }else{
         storageProducts.getById(id)
         .then(product => res.send(product))
+        .then(res.status(200))
         .catch(err => res.status(400).send(err))
-    }else{
-        storageProducts.getAllFrom()
-        .then(products => res.send(products))
-        .catch(err => res.json(err))
     }
 })
 
@@ -42,9 +40,12 @@ productsRouter.post('/', (req, res)=>{
 // access   Private
 
 
-productsRouter.put('/:id', (req, res)=>{
-    const product = storageProducts.updateProductById(req.params.id, req.body);
-    (product != undefined) ? res.json(res.body) : res.status(404).json({error: 'No se encontró el producto a modificar'})
+productsRouter.put('/:id', async(req, res)=>{
+    if(await storageProducts.updateProductById(req.params.id, req.body) == null){
+        return res.json({error: 'No se encontro el producto'})
+    }else{
+        return res.json(await storageProducts.updateProductById(req.params.id, req.body))
+    }
 })
 
 // Desc     delete product
@@ -52,9 +53,13 @@ productsRouter.put('/:id', (req, res)=>{
 // access   Private
 
 
-productsRouter.delete('/:id', (req, res)=>{
-    const product = storageProducts.deleteProductById(req.params.id);
-    (product != undefined) ? res.json(product) : res.status(404).json({error: 'No se encontró el producto a borrar'})
+productsRouter.delete('/:id', async (req, res)=>{
+    if( await storageProducts.deleteProductById(req.params.id) == null){
+        return res.json({error: 'No se encontro el producto'})
+    }else{
+        await storageProducts.deleteProductById(req.params.id)
+        return res.json( {message: 'Producto con id ' + req.params.id + ' eliminado'})
+    }
 })
 
 
