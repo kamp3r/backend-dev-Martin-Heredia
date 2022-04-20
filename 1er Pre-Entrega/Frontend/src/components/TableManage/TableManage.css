@@ -1,0 +1,44 @@
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.buttonazoAgregar{
+    width: 20%;
+    height: 5rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin: 1rem;
+}
+
+table{
+    font-size: 2rem;
+    text-align: center;
+}
+
+table img{
+    width: 12rem;
+}
+table i{
+    font-size: 2.5rem;
+}
+
+.form-group{
+    font-size: 2rem;
+}
+.form-control{
+    height: 3rem;
+    font-size: 1.5rem;
+}
+
+.textoHeader{
+    font-size: 3rem;
+    text-align: center;
+}
+.textoCuerpo{
+    font-size: 2rem;
+}

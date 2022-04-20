@@ -1,0 +1,25 @@
+.grillaProductos {
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  align-items: center;
+  justify-items: center;
+  background-color: #f8f3d9;
+  padding: 4rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .grillaProductos {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grillaProductos {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}

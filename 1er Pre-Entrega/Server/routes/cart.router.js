@@ -6,6 +6,8 @@ const cartRouter = Router();
 const productsInStorage = new ProductHandler('db/products.json');
 const cartFile = new CartHandler('db/cart.json');
 
+
+
 // Desc     create cart
 // route    POST /api/carrito/
 // access   Private
@@ -30,7 +32,12 @@ cartRouter.delete('/:id', (req, res) => {
 // route    GET /api/carrito/:id/productos
 // access   Private
 
-cartRouter.get('/:id/productos', (req, res) => {});
+cartRouter.get('/:id/productos', (req, res) => {
+    const { id } = req.params;
+    cartFile.getCartById(id)
+        .then(cart => res.json(cart))
+        .catch(err => res.status(500).json({ error: err }));
+});
 
 // Desc     add product to cart by id
 // route    POST /api/carrito/:id/productos

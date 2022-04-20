@@ -13,6 +13,15 @@ class CartHandler{
             return []
         }
     }
+    async getCartById(id){
+        let data = await this.getAll()
+        let index = data.findIndex(cart => cart.id == id)
+        if(index != -1){
+            return data[index]
+        }else{
+            return {error: `No se encontro el carrito`}
+        }
+    }
     async createCart(){
         let data = await this.getAll()
         let id

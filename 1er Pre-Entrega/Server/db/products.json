@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Vino Zuccardi",
+    "price": "2400",
+    "thumbnail": "https://www.espaciovino.com.ar/media/default/0001/54/thumb_53742_default_medium.jpeg",
+    "description": "Vino Zuccardi, Excelenete vino",
+    "code": "SKU123123",
+    "stock": 5,
+    "date": "Wed Apr 20 2022 12:10:33 GMT-0300 (hora estándar de Argentina)"
+  },
+  {
+    "id": 2,
+    "title": "Vino Alamos",
+    "price": 2000,
+    "thumbnail": "https://www.espaciovino.com.ar/media/default/0001/63/thumb_62734_default_medium.jpeg",
+    "description": "De suaves taninos en boca, el vino perfecto para una ocasion especial",
+    "code": "SKU123124",
+    "stock": 3,
+    "date": "Wed Apr 20 2022 12:10:33 GMT-0300 (hora estándar de Argentina)"
+  },
+  {
+    "id": 3,
+    "title": "Vino Finca Las Moras",
+    "price": 800,
+    "thumbnail": "https://www.espaciovino.com.ar/media/default/0001/55/thumb_54019_default_big.jpeg",
+    "description": "Vino ideal para tus comidas, y para disfrutar todos los dias, en cualquier momento",
+    "code": "SKU123125",
+    "stock": 3,
+    "date": "Wed Apr 20 2022 12:10:33 GMT-0300 (hora estándar de Argentina)"
+  },
+  {
+    "id": 4,
+    "title": "Vino Gata Flora",
+    "price": 1800,
+    "thumbnail": "https://www.espaciovino.com.ar/media/default/0001/58/thumb_57294_default_medium.jpeg",
+    "description": "Vino proveniente de Salta, excelente para ver un atardecer, y disfrutar de una picada",
+    "code": "SKU123126",
+    "stock": 8,
+    "date": "Wed Apr 20 2022 12:10:33 GMT-0300 (hora estándar de Argentina)"
+  },
+  {
+    "id": 5,
+    "title": "Vino El enemigo Reseva",
+    "price": 6000,
+    "thumbnail": "https://www.espaciovino.com.ar/media/default/0001/61/thumb_60525_default_big.jpeg",
+    "description": "Vino proveniente de Mendoza, creado por el 'messi' de los vinos, una propuesta diferente para sorprender a los conocedores, y a los novatos del vino",
+    "code": "SKU123127",
+    "stock": 10,
+    "date": "Wed Apr 20 2022 12:10:33 GMT-0300 (hora estándar de Argentina)"
+  },
+  {
+    "id": 6,
+    "title": "Vino Portillo",
+    "price": 550,
+    "thumbnail": "https://www.espaciovino.com.ar/media/default/0001/59/thumb_58921_default_big.jpeg",
+    "description": "El famoso vino triple B, bueno, bonito y barato. Es ideal para iniciarte en el vino, y poder acceder a buenos sabores, con un precio accesible",
+    "code": "SKU123128",
+    "stock": 20,
+    "date": "Wed Apr 20 2022 12:10:33 GMT-0300 (hora estándar de Argentina)"
+  }
+]

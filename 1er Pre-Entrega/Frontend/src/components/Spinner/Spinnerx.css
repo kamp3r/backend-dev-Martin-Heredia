@@ -1,0 +1,17 @@
+.spinnerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10rem 0;
+  }
+  
+  @media screen and (max-width: 999px) {
+    .spinnerContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 15rem 0;
+      height: 50rem;
+    }
+  }
+  
