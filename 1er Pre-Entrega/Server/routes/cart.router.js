@@ -44,13 +44,20 @@ cartRouter.get('/:id/productos', (req, res) => {
 // access   Private
 
 cartRouter.post('/:id/productos', async (req, res) => {
+  const prod ={
+    id: req.body.id,
+    title: req.body.title,
+    price: req.body.price,
+    thumbnail: req.body.thumbnail,
+    quantity: req.body.quantity,
+  }
   const id = req.params.id;
 
   productsInStorage.getById(req.body.id).then((product) => {
     if (!product) {
       res.send({ error: 'No se encontro el producto' });
     } else {
-      cartFile.addByid(id, product).then((cart) => {
+      cartFile.addByid(id, prod).then((cart) => {
         if (cart) {
           res.json('Producto agregado');
         } else {

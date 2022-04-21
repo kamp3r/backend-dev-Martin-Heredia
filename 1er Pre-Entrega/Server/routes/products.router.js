@@ -27,7 +27,7 @@ productsRouter.get("/:id?", async (req, res) => {
 
 productsRouter.post("/", (req, res) => {
   const product = req.body;
-  if (isAdmin) {
+  if (isAdmin === true) {
     if (
       product.title &&
       parseInt(product.price) &&
@@ -42,7 +42,7 @@ productsRouter.post("/", (req, res) => {
       res.status(400).json({ error: "Faltan datos" });
     }
   } else {
-    res.status(401).json({ error: "No tienes permisos" });
+    res.status(404).json({error: -1, descripcion: `Ruta ${req.originalUrl}, metodo ${req.method} NO AUTORIZADO`});
   }
 });
 
@@ -51,7 +51,7 @@ productsRouter.post("/", (req, res) => {
 // access   Private
 
 productsRouter.put("/:id", async (req, res) => {
-  if (isAdmin) {
+  if (isAdmin === true) {
     if (
       (await storageProducts.updateProductById(req.params.id, req.body)) == null
     ) {
@@ -62,7 +62,7 @@ productsRouter.put("/:id", async (req, res) => {
       );
     }
   } else {
-    res.status(401).json({ error: "No tienes permisos" });
+    res.status(404).json({error: -1, descripcion: `Ruta ${req.originalUrl}, metodo ${req.method} NO AUTORIZADO`});
   }
 });
 
@@ -71,7 +71,7 @@ productsRouter.put("/:id", async (req, res) => {
 // access   Private
 
 productsRouter.delete("/:id", async (req, res) => {
-  if (isAdmin) {
+  if (isAdmin === true) {
     if ((await storageProducts.deleteProductById(req.params.id)) == null) {
       return res.json({ error: "No se encontro el producto" });
     } else {
@@ -81,7 +81,7 @@ productsRouter.delete("/:id", async (req, res) => {
       });
     }
   } else {
-    res.status(401).json({ error: "No tienes permisos" });
+    res.status(404).json({error: -1, descripcion: `Ruta ${req.originalUrl}, metodo ${req.method} NO AUTORIZADO`});
   }
 });
 

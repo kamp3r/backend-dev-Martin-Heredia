@@ -24,6 +24,12 @@ const Navbar = () => {
         <NavLink to='/products' onClick={toggle} className='nav-links'>
           Productos
         </NavLink>
+        <NavLink to='/adminPage' onClick={toggle} className='nav-links'>
+          Admin
+        </NavLink>
+        <NavLink to='/cart' onClick={toggle} className='nav-links'>
+          Carrito
+        </NavLink>
       </ul>
     </nav>
   );

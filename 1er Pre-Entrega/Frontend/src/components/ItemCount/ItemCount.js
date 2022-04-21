@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./ItemCount.css";
 import axios from 'axios'
 
-const ItemCount = ({ initial, stock}) => {
+const ItemCount = ({ initial, stock, item}) => {
   const [elementos, setElementos] = useState(initial);
   const [disabledAdd, setDisabledAdd] = useState(true);
   const [disabledSuma, setDisabledSuma] = useState(false);
@@ -29,16 +29,19 @@ const ItemCount = ({ initial, stock}) => {
     setElementos(elementos - 1);
   };
 
-  const crearCarrito = () =>{
-    axios.post('http://localhost:8080/api/carrito/')
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err))
-  }
-  
-  const agregarItem = () =>{
-    axios.post('http://localhost:8080/api/carrito/')
-      .then(res => console.log(res.data.products))
-      .catch(err => console.log(err))
+  const agregarItem = async () =>{
+
+    axios({
+      method: 'post',
+      url: `http://localhost:8080/api/carrito/2/productos`,
+      data: {
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        thumbnail: item.thumbnail,
+        quantity: elementos
+      }
+    })
   }
 
   return (
@@ -60,7 +63,7 @@ const ItemCount = ({ initial, stock}) => {
           <i className="fas fa-plus"></i>
         </button>
       </div>
-      <button className="agregarItem" onClick={()=>{crearCarrito(); agregarItem()}} disabled={disabledAdd} >
+      <button className="agregarItem" onClick={()=>{agregarItem()}} disabled={disabledAdd} >
         Agregar al carrito
       </button>
     </div>
