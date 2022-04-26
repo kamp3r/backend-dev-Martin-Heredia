@@ -35,8 +35,7 @@ class ProductsClass {
   async getAll() {
     try {
       const result = await knexInstance.from(this.name).select('*');
-      return result;
-      console.log(result)
+      return Object.values(JSON.parse(JSON.stringify(result)));
     } catch (err) {
       console.log(err);
     }

@@ -30,15 +30,12 @@ app.get('/', (req, res) => {
 io.on('connection', async (socket) => {
     console.log('¡Nuevo cliente conectado!');
     
-    socket.emit('products', await storageProducts.getAll()
-    .then(data => data)
-    .catch(err => console.log(err)));
+    socket.emit('products', await storageProducts.getAll());
     
     socket.on('newProd', async (product) => {
         storageProducts.save(product);
-        io.sockets.emit('products', await storageProducts.getAll()
-        .then(data => data)
-        .catch(err => console.log(err)))
+        io.sockets.emit('products', await storageProducts.getAll());
+
     });
     
     socket.emit('messages', await storageChat.getAllFrom());
