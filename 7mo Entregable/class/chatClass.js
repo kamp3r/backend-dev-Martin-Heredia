@@ -8,20 +8,22 @@ class ChatHandler {
     this.table = db;
     this.init()
   }
-  async init(){
-    const tableBorn = await knexChat.schema.hasTable(this.table).then((exists) => {
-      if (!exists) {
-        return knexChat.schema.createTable(this.table, (table) => {
-            table.increments('id').primary();
-            table.string('sender', 50).notNullable();
-            table.string('msg', 255).notNullable();
-            table.string('date', 255).notNullable();
-          })
-          .then(() => console.log(`Table ${this.table} created!`))
-          .catch((err) => console.log(err));
+  async init() {
+    try {
+      const tableBorn = await knexChat.schema.hasTable(this.table);
+      if (!tableBorn) {
+        await knexChat.schema.createTable(this.table, (table) => {
+          table.increments('id').primary();
+          table.string('sender', 80).notNullable;
+          table.string('msg', 255).notNullable();
+          table.string('date', 255).notNullable;
+        });
+        console.log('Table created!');
+        return tableBorn;
       }
-    });
-    return tableBorn;
+    } catch (err) {
+      console.log(err);
+    }
   }
   async getAllFrom() {
     try {
@@ -33,7 +35,8 @@ class ChatHandler {
   }
   async saveChat(message) {
     try {
-      await knexChat(this.table).insert(message);
+      const msg = await knexChat(this.table).insert(message);
+      return msg
     } catch (err) {
       console.log(err);
     }

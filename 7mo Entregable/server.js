@@ -35,7 +35,6 @@ io.on('connection', async (socket) => {
     socket.on('newProd', async (product) => {
         storageProducts.save(product);
         io.sockets.emit('products', await storageProducts.getAll());
-
     });
     
     socket.emit('messages', await storageChat.getAllFrom());

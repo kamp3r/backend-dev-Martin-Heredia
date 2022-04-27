@@ -9,28 +9,29 @@ class ProductsClass {
     this.init();
   }
   async init() {
-    const tableBorn = await knexInstance.schema
-      .hasTable(this.name)
-      .then((exists) => {
-        if (!exists) {
-          return knexInstance.schema
-            .createTable(this.name, (table) => {
-              table.increments('id').primary();
-              table.string('title', 50).notNullable();
-              table.integer('price', 50).notNullable();
-              table.string('thumbnail', 255).notNullable();
-            })
-            .then(() => console.log(`Table ${this.name} created!`))
-            .catch((err) => console.log(err));
-        }
-      });
-    return tableBorn;
+    try {
+      const tableBorn = await knexInstance.schema.hasTable(this.name);
+      if (!tableBorn) {
+        await knexInstance.schema.createTable(this.name, (table) => {
+          table.increments('id').primary();
+          table.string('title', 100).notNullable;
+          table.integer('price', 100).notNullable();
+          table.string('thumbnail', 255).notNullable;
+        });
+        console.log('Table created!');
+        return tableBorn;
+      }
+    } catch (err) {
+      console.log(err);
+    }
   }
   async save(product) {
-    await knexInstance(this.name)
-      .insert(product)
-      .then(() => console.log('Product saved!'))
-      .catch((err) => console.log(err));
+    try {
+      const item = await knexInstance(this.name).insert(product);
+      return item;
+    } catch (err) {
+      console.log(err);
+    }
   }
   async getAll() {
     try {
@@ -42,30 +43,41 @@ class ProductsClass {
   }
   async getById(id) {
     try {
-      await knexInstance.from(this.name).select('*').where('id', id).limit(1);
+      const result = await knexInstance
+        .from(this.name)
+        .select('*')
+        .where('id', id)
+        .limit(1);
+      return result;
     } catch {
       console.log({ error: 'error' });
     }
   }
   async updateData(id, product) {
-    await knexInstance(this.name)
-      .where('id', id)
-      .update(product)
-      .then(() => console.log('Product updated!'))
-      .catch((err) => console.log(err));
+    try {
+      const productUpdate = await knexInstance(this.name)
+        .where('id', id)
+        .update(product);
+      return productUpdate;
+    } catch {
+      console.log({ error: 'error' });
+    }
   }
   async deleteData(id) {
-    await knexInstance(this.name)
-      .where('id', id)
-      .del()
-      .then(() => console.log('Product deleted!'))
-      .catch((err) => console.log(err));
+    try {
+      const itemDeleted = await knexInstance(this.name).where('id', id).del();
+      return itemDeleted;
+    } catch {
+      console.log({ error: 'error' });
+    }
   }
   async deleteAll() {
-    await knexInstance(this.name)
-      .del()
-      .then(() => console.log('All products deleted!'))
-      .catch((err) => console.log(err));
+    try {
+      const trashAll = await knexInstance(this.name).del();
+      return trashAll;
+    } catch {
+      console.log({ error: 'error' });
+    }
   }
 }
 
