@@ -1,0 +1,123 @@
+.itemCount {
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.containerButtons {
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+}
+
+.containerStock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numeroSeleccionado {
+  padding: 0 1rem;
+  background: #fafafa;
+  border: none;
+}
+
+.ButtCount {
+  width: 15%;
+  border: none;
+  background: radial-gradient(
+    circle,
+    rgba(241, 173, 76, 1) 0%,
+    rgba(247, 216, 140, 1) 0%,
+    rgba(233, 167, 9, 1) 95%
+  );
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-plus,
+.fa-minus {
+  color: black;
+  font-size: 1.5rem;
+}
+
+.ButtCount:hover {
+  background: radial-gradient(
+    circle,
+    rgba(241, 172, 76, 0.685) 0%,
+    rgba(247, 217, 140, 0.685) 0%,
+    rgba(233, 166, 9, 0.692) 95%
+  );
+}
+
+.ButtCount:active {
+  background: radial-gradient(
+    circle,
+    rgba(245, 162, 46, 0.801) 0%,
+    rgba(243, 207, 117, 0.904) 0%,
+    rgba(255, 185, 21, 0.863) 95%
+  );
+  box-shadow: 0 5px
+    radial-gradient(
+      circle,
+      rgba(245, 162, 46, 0.801) 0%,
+      rgba(243, 207, 117, 0.904) 0%,
+      rgba(255, 185, 21, 0.863) 95%
+    );
+}
+
+.numeroSeleccionado,
+.stockDisponible {
+  font-size: 2rem;
+}
+
+.ButtCount:disabled {
+  background: #926527cb;
+}
+
+.agregarItem {
+  background: radial-gradient(
+    circle,
+    rgba(245, 162, 46, 0.801) 0%,
+    rgba(243, 207, 117, 0.904) 0%,
+    rgba(255, 185, 21, 0.863) 95%
+  );
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  height: 8rem;
+  font-size: 2rem;
+}
+
+.agregarItem:hover {
+  background: radial-gradient(
+    circle,
+    rgba(241, 172, 76, 0.685) 0%,
+    rgba(247, 217, 140, 0.685) 0%,
+    rgba(233, 166, 9, 0.692) 95%
+  );
+}
+
+.agregarItem:active {
+  background: radial-gradient(
+    circle,
+    rgba(245, 162, 46, 0.801) 0%,
+    rgba(243, 207, 117, 0.904) 0%,
+    rgba(255, 185, 21, 0.863) 95%
+  );
+  box-shadow: 0 5px
+    radial-gradient(
+      circle,
+      rgba(245, 162, 46, 0.801) 0%,
+      rgba(243, 207, 117, 0.904) 0%,
+      rgba(255, 185, 21, 0.863) 95%
+    );
+}
+.agregarItem:disabled {
+  background: #926527cb;
+}

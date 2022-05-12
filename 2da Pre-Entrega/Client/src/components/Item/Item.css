@@ -1,0 +1,132 @@
+.cardProducto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+  height: fit-content;
+  box-shadow: 2px 10px 24px -2px rgba(0, 0, 0, 0.75);
+  background: linear-gradient(180deg, rgb(255, 255, 255) 78%, #b88612ee 95%);
+  color: #333232;
+  border-radius: 1rem;
+}
+
+.cardProducto:hover {
+  transform: scale(1.03);
+  transition: 0.2s all ease-in-out;
+}
+
+.cardImage {
+  width: 50%;
+  height: 20rem;
+}
+
+.name {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+}
+
+.price {
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+.code{
+  font-size: 1.5rem;
+}
+
+.stock {
+  font-size: 1.5rem;
+  color: rgb(218, 218, 218);
+  text-align: center;
+  margin: 1rem 0;
+  font-family: "Raleway", sans-serif;
+  background: transparent;
+}
+
+.verMas {
+  background: radial-gradient(
+    circle,
+    #f5a22ecc 0%,
+    #f3cf75e7 0%,
+    #ffb915dc 95%
+  );
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  height: 4.5rem;
+  width: 100%;
+  font-size: 2.8rem;
+}
+
+.linkVerMas {
+  line-height: 0px;
+}
+
+.verMas:hover {
+  background: radial-gradient(
+    circle,
+    rgba(241, 172, 76, 0.685) 0%,
+    rgba(247, 217, 140, 0.685) 0%,
+    rgba(233, 166, 9, 0.692) 95%
+  );
+}
+
+.verMas:active {
+  background: radial-gradient(
+    circle,
+    rgba(245, 162, 46, 0.801) 0%,
+    rgba(243, 207, 117, 0.904) 0%,
+    rgba(255, 185, 21, 0.863) 95%
+  );
+  box-shadow: 0 5px
+    radial-gradient(
+      circle,
+      rgba(245, 162, 46, 0.801) 0%,
+      rgba(243, 207, 117, 0.904) 0%,
+      rgba(255, 185, 21, 0.863) 95%
+    );
+}
+@media screen and (max-width: 768px) {
+  .cardProducto {
+    width: 24rem
+  }
+  .cardImage {
+    width: 100%;
+    height: 22rem;
+  }
+  .name {
+    font-size: 1.8rem;
+  }
+  
+  .price {
+    font-size: 2.2rem;
+  }
+
+  .verMas {
+    margin-top: 1rem;
+    height: 4rem;
+    width: 100%;
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cardProducto {
+    width: 20rem
+  }
+  .cardImage {
+    width: 100%;
+    height: 20rem;
+  }
+  .name {
+    font-size: 1.5rem;
+  }
+  .price {
+    font-size: 1.9rem;
+  }
+}

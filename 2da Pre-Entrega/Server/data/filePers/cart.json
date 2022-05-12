@@ -1,0 +1,54 @@
+[
+  {
+    "timestamp": "2022-05-11T19:19:53.019Z",
+    "products": [
+      {
+        "title": "Vino El enemigo Reseva",
+        "price": 6000,
+        "thumbnail": "https://www.espaciovino.com.ar/media/default/0001/61/thumb_60525_default_big.jpeg",
+        "description": "Vino proveniente de Mendoza, creado por el 'messi' de los vinos, una propuesta diferente para sorprender a los conocedores, y a los novatos del vino",
+        "code": "SKU123127",
+        "stock": 10,
+        "timestamp": "2022-05-11T19:12:57.341Z",
+        "id": "3c36f3ef-f86a-446b-a269-2e0a87aa3bcf"
+      },
+      {
+        "title": "Vino Portillo",
+        "price": 550,
+        "thumbnail": "https://www.espaciovino.com.ar/media/default/0001/59/thumb_58921_default_big.jpeg",
+        "description": "El famoso vino triple B, bueno, bonito y barato. Es ideal para iniciarte en el vino, y poder acceder a buenos sabores, con un precio accesible",
+        "code": "SKU123128",
+        "timestamp": "2022-05-11T19:11:57.341Z",
+        "stock": 20,
+        "id": "5f858ec9-4ca5-4bfd-9a7e-09aa9b2fb4d8"
+      },
+      {
+        "title": "Vino Zuccardi",
+        "price": 3400,
+        "thumbnail": "https://www.espaciovino.com.ar/media/default/0001/54/thumb_53742_default_medium.jpeg",
+        "description": "Vino Zuccardi, Excelente vino",
+        "code": "SKU123123",
+        "stock": 9,
+        "timestamp": "2022-05-11T19:16:57.341Z",
+        "id": "318046c0-7c7b-40a0-b763-b26b80d764d0"
+      }
+    ],
+    "id": "f1b0c091-d6c0-4886-a3fc-e4e5f37ea46c"
+  },
+  {
+    "timestamp": "2022-05-11T19:19:57.341Z",
+    "products": [
+      {
+        "title": "Vino Zuccardi",
+        "price": 3400,
+        "thumbnail": "https://www.espaciovino.com.ar/media/default/0001/54/thumb_53742_default_medium.jpeg",
+        "description": "Vino Zuccardi, Excelente vino",
+        "code": "SKU123123",
+        "stock": 9,
+        "timestamp": "2022-05-11T19:16:57.341Z",
+        "id": "318046c0-7c7b-40a0-b763-b26b80d764d0"
+      }
+    ],
+    "id": "dfa61286-9255-404b-8699-d0072ab85cbe"
+  }
+]
