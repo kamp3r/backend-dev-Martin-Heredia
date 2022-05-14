@@ -1,0 +1,248 @@
+1)
+> show databases
+admin      0.000GB
+config     0.000GB
+local      0.000GB
+> use ecommerce
+switched to db ecommerce
+> db.createCollection("mensajes")
+> db.createCollection("productos")
+> show collections
+mensajes
+productos
+
+2)
+> db.productos.insertMany([{"title": "Catena Zapata Malbec", "price": 5000, "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_904546-MLA46773296596_072021-V.webp"},{"title": "Portillo Rosé", "price": 720, "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_746168-MLA48639717026_122021-O.webp"}, {"title": "Cafayate Martin Bruno", "price": 550, "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_680521-MLA45296330990_032021-O.webp"}, {"title": "Luigi Bosca Malbec", "price": 1386, "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_902639-MLA32868351499_112019-O.webp"}, {"title": "Arnaldo B Malbec & Cabernet", "price": 2013, "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_915236-MLA43940631830_102020-O.webp"}, {"title": "Rutini Cabernet Franc", "price": 1808, "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_738510-MLA48168557996_112021-V.webp"}, {"title": "Termidor abocado", "price": 400, "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_935407-MLA48585368124_122021-O.webp"}, {"title": "Saint Felicien Semillon Doux", "price": 2290, "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_837607-MLA49356605494_032022-V.webp"}, {"title": "El enemigo Chardonnay", "price": 2656,"thumbnail": "https://http2.mlstatic.com/D_NQ_NP_840494-MLA46603765292_072021-O.webp"}, {"title": "Garzon Reserva Albariño", "price": 3249, "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_822255-MLA44764361227_012021-O.webp"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("626c43258108167375db27ff"),
+                ObjectId("626c43258108167375db2800"),
+                ObjectId("626c43258108167375db2801"),
+                ObjectId("626c43258108167375db2802"),
+                ObjectId("626c43258108167375db2803"),
+                ObjectId("626c43258108167375db2804"),
+                ObjectId("626c43258108167375db2805"),
+                ObjectId("626c43258108167375db2806"),
+                ObjectId("626c43258108167375db2807"),
+                ObjectId("626c43258108167375db2808")
+        ]
+}
+> db.mensajes.insertMany([{"sender": "pepito@gmail.com", message: "Hola a todos", "date": new Date()}, {"sender": "josecito@gmail.com", message: "Hola, como va?", "date": new Date()}, {"sender": "albertito@gmail.com", message: "Como el pais me va!", "date": new Date()}, {"sender": "dieguito@gmail.com", message: "Que caracter!", "date": new Date()}, {"sender": "pepito@gmail.com", message: "El horno no esta para bollos se ve", "date": new Date()}, {"sender": "albertito@gmail.com", message: "Es lo que hay", "date": new Date()}, {"sender": "juancito@gmail.com", message: "Buenas y santas a todos!", "date": new Date()}, {"sender": "joesecito@gmail.com", message: "De esas quedan pocas!", "date": new Date()}, {"sender": "tilin@gmail.com", message: "Que onda?", "date": new Date()}, {"sender": "pepito@gmail.com", message: "A la m13rd@ tilin!!", "date": new Date()}, {"sender": "josecito@gmail.com", message: "Y aca ya no se que escribir", "date": new Date()}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("626c47ca8108167375db2809"),
+                ObjectId("626c47ca8108167375db280a"),
+                ObjectId("626c47ca8108167375db280b"),
+                ObjectId("626c47ca8108167375db280c"),
+                ObjectId("626c47ca8108167375db280d"),
+                ObjectId("626c47ca8108167375db280e"),
+                ObjectId("626c47ca8108167375db280f"),
+                ObjectId("626c47ca8108167375db2810"),
+                ObjectId("626c47ca8108167375db2811"),
+                ObjectId("626c47ca8108167375db2812"),
+                ObjectId("626c47ca8108167375db2813")
+        ]
+}
+
+3)
+
+> db.productos.find().pretty()
+{
+        "_id" : ObjectId("626c43258108167375db27ff"),
+        "title" : "Catena Zapata Malbec",
+        "price" : 5000,
+        "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_904546-MLA46773296596_072021-V.webp"
+}
+{
+        "_id" : ObjectId("626c43258108167375db2800"),
+        "title" : "Portillo Rosé",
+        "price" : 720,
+        "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_746168-MLA48639717026_122021-O.webp"
+}
+{
+        "_id" : ObjectId("626c43258108167375db2801"),
+        "title" : "Cafayate Martin Bruno",
+        "price" : 550,
+        "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_680521-MLA45296330990_032021-O.webp"
+}
+{
+        "_id" : ObjectId("626c43258108167375db2802"),
+        "title" : "Luigi Bosca Malbec",
+        "price" : 1386,
+        "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_902639-MLA32868351499_112019-O.webp"
+}
+{
+        "_id" : ObjectId("626c43258108167375db2803"),
+        "title" : "Arnaldo B Malbec & Cabernet",
+        "price" : 2013,
+        "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_915236-MLA43940631830_102020-O.webp"
+}
+{
+        "_id" : ObjectId("626c43258108167375db2804"),
+        "title" : "Rutini Cabernet Franc",
+        "price" : 1808,
+        "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_738510-MLA48168557996_112021-V.webp"
+}
+{
+        "_id" : ObjectId("626c43258108167375db2805"),
+        "title" : "Termidor abocado",
+        "price" : 400,
+        "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_935407-MLA48585368124_122021-O.webp"
+}
+{
+        "_id" : ObjectId("626c43258108167375db2806"),
+        "title" : "Saint Felicien Semillon Doux",
+        "price" : 2290,
+        "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_837607-MLA49356605494_032022-V.webp"
+}
+{
+        "_id" : ObjectId("626c43258108167375db2807"),
+        "title" : "El enemigo Chardonnay",
+        "price" : 2656,
+        "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_840494-MLA46603765292_072021-O.webp"
+}
+{
+        "_id" : ObjectId("626c43258108167375db2808"),
+        "title" : "Garzon Reserva Albariño",
+        "price" : 3249,
+        "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_822255-MLA44764361227_012021-O.webp"
+}
+> db.mensajes.find().pretty()
+{
+        "_id" : ObjectId("626c47ca8108167375db2809"),
+        "sender" : "pepito@gmail.com",
+        "message" : "Hola a todos",
+        "date" : ISODate("2022-04-29T20:17:14.634Z")
+}
+{
+        "_id" : ObjectId("626c47ca8108167375db280a"),
+        "sender" : "josecito@gmail.com",
+        "message" : "Hola, como va?",
+        "date" : ISODate("2022-04-29T20:17:14.634Z")
+}
+{
+        "_id" : ObjectId("626c47ca8108167375db280b"),
+        "sender" : "albertito@gmail.com",
+        "message" : "Como el pais me va!",
+        "date" : ISODate("2022-04-29T20:17:14.634Z")
+}
+{
+        "_id" : ObjectId("626c47ca8108167375db280c"),
+        "sender" : "dieguito@gmail.com",
+        "message" : "Que caracter!",
+        "date" : ISODate("2022-04-29T20:17:14.634Z")
+}
+{
+        "_id" : ObjectId("626c47ca8108167375db280d"),
+        "sender" : "pepito@gmail.com",
+        "message" : "El horno no esta para bollos se ve",
+        "date" : ISODate("2022-04-29T20:17:14.634Z")
+}
+{
+        "_id" : ObjectId("626c47ca8108167375db280e"),
+        "sender" : "albertito@gmail.com",
+        "message" : "Es lo que hay",
+        "date" : ISODate("2022-04-29T20:17:14.634Z")
+}
+{
+        "_id" : ObjectId("626c47ca8108167375db280f"),
+        "sender" : "juancito@gmail.com",
+        "message" : "Buenas y santas a todos!",
+        "date" : ISODate("2022-04-29T20:17:14.634Z")
+}
+{
+        "_id" : ObjectId("626c47ca8108167375db2810"),
+        "sender" : "joesecito@gmail.com",
+        "message" : "De esas quedan pocas!",
+        "date" : ISODate("2022-04-29T20:17:14.634Z")
+}
+{
+        "_id" : ObjectId("626c47ca8108167375db2811"),
+        "sender" : "tilin@gmail.com",
+        "message" : "Que onda?",
+        "date" : ISODate("2022-04-29T20:17:14.634Z")
+}
+{
+        "_id" : ObjectId("626c47ca8108167375db2812"),
+        "sender" : "pepito@gmail.com",
+        "message" : "A la m13rd@ tilin!!",
+        "date" : ISODate("2022-04-29T20:17:14.634Z")
+}
+{
+        "_id" : ObjectId("626c47ca8108167375db2813"),
+        "sender" : "josecito@gmail.com",
+        "message" : "Y aca ya no se que escribir",
+        "date" : ISODate("2022-04-29T20:17:14.634Z")
+}
+
+4)
+
+> db.productos.estimatedDocumentCount()
+10
+> db.mensajes.estimatedDocumentCount()
+11
+
+5)
+
+A)> db.productos.insertOne({"title": "Livvera Malvasia", "price": 3200, "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_872230-MLA32283869938_092019-O.webp"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("626c4b138108167375db2814")
+}
+
+B) 
+I)>db.productos.find({"price": {$lt: 1000}})
+{ "_id" : ObjectId("626c43258108167375db2800"), "title" : "Portillo Rosé", "price" : 720, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_746168-MLA48639717026_122021-O.webp" }
+{ "_id" : ObjectId("626c43258108167375db2801"), "title" : "Cafayate Martin Bruno", "price" : 550, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_680521-MLA45296330990_032021-O.webp" }
+{ "_id" : ObjectId("626c43258108167375db2805"), "title" : "Termidor abocado", "price" : 400, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_935407-MLA48585368124_122021-O.webp" }
+
+II)> db.productos.find({$and: [{"price": {$gt: 1000}},{"price": {$lt:3000}}]})
+{ "_id" : ObjectId("626c43258108167375db2802"), "title" : "Luigi Bosca Malbec", "price" : 1386, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_902639-MLA32868351499_112019-O.webp" }
+{ "_id" : ObjectId("626c43258108167375db2803"), "title" : "Arnaldo B Malbec & Cabernet", "price" : 2013, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_915236-MLA43940631830_102020-O.webp" }
+{ "_id" : ObjectId("626c43258108167375db2804"), "title" : "Rutini Cabernet Franc", "price" : 1808, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_738510-MLA48168557996_112021-V.webp" }
+{ "_id" : ObjectId("626c43258108167375db2806"), "title" : "Saint Felicien Semillon Doux", "price" : 2290, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_837607-MLA49356605494_032022-V.webp" }
+{ "_id" : ObjectId("626c43258108167375db2807"), "title" : "El enemigo Chardonnay", "price" : 2656, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_840494-MLA46603765292_072021-O.webp" }
+
+III)> db.productos.find({"price": {$gt: 3000}})
+{ "_id" : ObjectId("626c43258108167375db27ff"), "title" : "Catena Zapata Malbec", "price" : 5000, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_904546-MLA46773296596_072021-V.webp" }
+{ "_id" : ObjectId("626c43258108167375db2808"), "title" : "Garzon Reserva Albariño", "price" : 3249, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_822255-MLA44764361227_012021-O.webp" }
+{ "_id" : ObjectId("626c4b138108167375db2814"), "title" : "Livvera Malvasia", "price" : 3200, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_872230-MLA32283869938_092019-O.webp" }
+
+IV)> db.productos.find().skip(2).limit(1).sort({price:1})
+{ "_id" : ObjectId("626c43258108167375db2800"), "title" : "Portillo Rosé", "price" : 720, "thumbnail" : "https://http2.mlstatic.com/D_NQ_NP_746168-MLA48639717026_122021-O.webp" }
+
+C)> db.productos.updateMany({},{$set: {"stock": 100}})
+{ "acknowledged" : true, "matchedCount" : 11, "modifiedCount" : 11 }
+
+D)>db.productos.updateMany({price: {$gte: 4000}},{$set: {"stock": 0}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+E)> db.productos.deleteMany({price: {$lte: 1000}})
+{ "acknowledged" : true, "deletedCount" : 3 }
+
+6) db.createUser({user: "pepe", pwd: "asd456", roles: [{role: "read", db: "ecommerce"}]})
+Successfully added user: {
+        "user" : "pepe",
+        "roles" : [
+                {
+                        "role" : "read",
+                        "db" : "ecommerce"
+                }
+        ]
+}
+
+A) Me logueo con mongo --port 27017 --authenticationDatabase "admin" -u "pepe" -p "asd456"
+B) show dbs
+ecommerce  0.000GB (solo muestra a la que tiene acceso el usuario)
+C) use ecommerce
+d) db.productos.insert({title: "newVino"})
+WriteCommandError({
+        "ok" : 0,
+        "errmsg" : "not authorized on ecommerce to execute command { insert: \"productos\", ordered: true, lsid: { id: UUID(\"9989ed09-bb8f-48e1-b443-bf3123f00f53\") }, $db: \"ecommerce\" }",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+})
+La accion es rechazada ya que el usuario no tiene permisos
+

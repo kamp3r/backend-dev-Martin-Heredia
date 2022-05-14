@@ -43,7 +43,7 @@ ProductRoute.post('/', async (req, res) => {
 
 ProductRoute.put('/:id', async (req, res) => {
   const id = req.params.id;
-  if ((await productDao.updateElement(id, req.body)) == null) {
+  if ((await productDao.updateElement(id, req.body)) === null) {
     return res.status(404).json({ message: 'Product not found' });
   } else {
     return res.json(await productDao.updateElement(id, req.body));

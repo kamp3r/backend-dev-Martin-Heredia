@@ -61,7 +61,7 @@ class FirebaseHandler {
           } else {
             snapshot.forEach((doc) => {
               doc.ref.update(element);
-              return element;
+              return { message: 'Product updated' };
             });
           }
         });

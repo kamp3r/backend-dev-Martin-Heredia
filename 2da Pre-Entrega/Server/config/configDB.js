@@ -22,7 +22,7 @@ const configDB = {
         cart: [],
     },
     DBSwitch: {
-        DB: (process.env.db) ,
+        DB: process.env.DATABASE,
     }
 };
 

@@ -19,6 +19,7 @@ const formatoNumero = new Intl.NumberFormat('en-EN', {
 const TableManage = () => {
   const [data, setData] = useState([]);
   const [modalType, setModalType] = useState('');
+  const [DB, setDB] = useState('');
   const [modal, setModal] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [formData, setFormData] = useState({
@@ -30,21 +31,6 @@ const TableManage = () => {
     code: '',
     stock: '',
   });
-
-  const [db, SetDB] = useState();
-
-    const handleChange = (e) => {
-        SetDB(e.target.value);
-    }
-    
- 
-  const dbs = [
-      {value: '', name: 'Seleccione una base de datos'},
-      {value: 'fileSystem', name: 'FileSystem'},
-      {value: 'firebase', name: 'Firebase'},
-      {value: 'memory', name: 'Memory'},
-      {value: 'mongodb', name: 'MongoDB'},
-  ]
 
   const modalAction = () => {
     setModal(!modal);
@@ -61,6 +47,17 @@ const TableManage = () => {
   const inputChange = (e) => {
     const input = e.target.value;
     setFormData({ ...formData, [e.target.name]: input });
+  };
+
+  const handlerChangeDB = (e) => {
+    setDB(e.target.value);
+  };
+
+  const persistDB = async () => {
+    await axios.post(`http://localhost:8080/api/persist`, {
+      persist: DB,
+    });
+    fetchProducts();
   };
 
   const fetchProducts = async () => {
@@ -100,15 +97,6 @@ const TableManage = () => {
       .catch((err) => console.log(err));
   };
 
-  const selectDB = async () => {
-    await axios('http://localhost:8080/api/persist', db)
-    .then((res) => {
-      fetchProducts();
-    })
-    .catch((err) => console.log(err));
-  }
-  ;
-
   const takeData = (item) => {
     setModalType('update');
     setFormData({
@@ -124,18 +112,15 @@ const TableManage = () => {
 
   return (
     <>
-      <legend>Seleccione la base de datos</legend>
-      <select name='persist' id='persist' onChange={handleChange}>
-        {dbs.map((db) => (
-          <option key={db.value} value={db.value}>
-            {db.name}
-          </option>
-        ))}
-      </select>
-      <button type='submit' onClick={selectDB}>
-        Submit
-      </button>
-
+      <div>
+        <select name='persist' id='persist' onChange={handlerChangeDB}>
+          <option value={'fileSystem'}>FileSystem</option>
+          <option value={'firebase'}>Firebase</option>
+          <option value={'memory'}>Memory</option>
+          <option value={'mongodb'}>MongoDB</option>
+        </select>
+        <Button onClick={persistDB}>Seleccionar</Button>
+      </div>
       <div className='buttonContainer'>
         <button
           onClick={() => {
