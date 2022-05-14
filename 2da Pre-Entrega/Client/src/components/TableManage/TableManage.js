@@ -57,7 +57,7 @@ const TableManage = () => {
     await axios.post(`http://localhost:8080/api/persist`, {
       persist: DB,
     });
-    fetchProducts();
+    await fetchProducts();
   };
 
   const fetchProducts = async () => {
@@ -121,6 +121,7 @@ const TableManage = () => {
         </select>
         <Button onClick={persistDB}>Seleccionar</Button>
       </div>
+      <>
       <div className='buttonContainer'>
         <button
           onClick={() => {
@@ -286,6 +287,7 @@ const TableManage = () => {
           </Button>
         </ModalFooter>
       </Modal>
+      </>
     </>
   );
 };
