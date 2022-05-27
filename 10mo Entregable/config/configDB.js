@@ -1,19 +1,19 @@
-import MongoStore from "connect-mongo"
-import mongoose from "mongoose"
-import session from "express-session"
+import MongoStore from 'connect-mongo';
+import mongoose from 'mongoose';
+import session from 'express-session';
 
-const connectSession = (app)=>{
-    app.use(session({
-        store: MongoStore({
-            mongoUrl: process.env.MONGO_URL
-        }),
-        secret: String(process.env.SECRET),
-        resave: false,
-        saveUninitialized: false,
-        cookie: {
-            maxAge: 60000
-        }
-    }))
-}
+const connectSession = (app) => {
+  app.use(
+    session({
+      secret: String(process.env.SECRET),
+      store: new MongoStore({ client: mongoose.connection.getClient() }),
+      resave: true,
+      saveUninitialized: false,
+      cookie: {
+        maxAge: 60000,
+      },
+    })
+  );
+};
 
-export { connectSession }
+export { connectSession };
