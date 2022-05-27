@@ -4,9 +4,10 @@ import { productGenerator } from '../daos/products/productGeneratorTest.js';
 const productFakeRoute = express.Router();
 
 productFakeRoute.get('/', (req, res) => {
-    if(req.session.user){
+    const userName = req.session.user;
+    if(userName){
         const lista = productGenerator(5);
-        res.render ('prods', {lista});
+        res.render ('home', {userName, lista});
     }else{
         res.redirect('/login');
     }

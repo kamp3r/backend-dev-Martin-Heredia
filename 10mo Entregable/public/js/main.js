@@ -1,26 +1,6 @@
 const socket = io();
 
-const compileTemplate = async (prod) => {
-  // funcion fetch para traer el template de la tabla, la manejo de manera asincronica
-  const templateFetched = await fetch('../template/products.hbs'); //aguardo a fetchear la plantilla
-  const toText = await templateFetched.text(); //obtengo el texto de la llamada al servidor
-  const compiledTemplate = Handlebars.compile(toText); // compilo con handlebars
-  const html = compiledTemplate({ prod }); //paso a rellenar la plantilla con la data que voy a pasarle por parametro
-  document.getElementById('listContainer').innerHTML = html; //selecciono el elemento donde voy a ubicar mi plantilla con datos
-};
 
-fetch('http://localhost:8080/api/products-test', {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-}).then((res) => {
-  res.json().then((data) => {
-    compileTemplate(data);
-  });
-});
-
-//
 //Validacion de Email  y evento para deshabilitar botones e input de mensaje
 const regex =
   /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
@@ -98,7 +78,7 @@ socket.on('incommingMessage', (messages) => {
   if(JSON.stringify(messages).length === undefined){
     document.getElementById('tasaCompresion').innerHTML = ``
   }else{
-    document.getElementById('tasaCompresion').innerHTML = `Con tasa de compresion del ${sizeData.toFixed(2)}%`
+    document.getElementById('tasaCompresion').innerHTML = `tasa de compresion del ${sizeData.toFixed(2)}%`
   }
  
   const insertChat = desnormalized.messages
