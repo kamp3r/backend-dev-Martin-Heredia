@@ -1,0 +1,82 @@
+<h2 class="text-primary mt-2">Centro de mensajes <p id="tasaCompresion"></p></h2>
+
+<div class="container" id="msgContainer"></div>
+
+
+<div id="boxMsg"></div>
+<form id="chatForm">
+  <div class="mb-3">
+    <label for="email" class="form-label text-success">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      id="emailInput"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label text-success">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      id="nameInput"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="surname" class="form-label text-success">Apellido</label>
+    <input
+      type="text"
+      class="form-control"
+      name="surname"
+      id="surnameInput"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="age" class="form-label text-success">Edad</label>
+    <input
+      type="number"
+      class="form-control"
+      name="age"
+      id="ageInput"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="alias" class="form-label text-success">Alias</label>
+    <input
+      type="text"
+      class="form-control"
+      name="alias"
+      id="aliasInput"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="avatar" class="form-label text-success">Avatar</label>
+    <input
+      type="url"
+      class="form-control"
+      name="avatar"
+      id="avatarInput"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="msg" class="form-label text-success">Mensaje</label>
+    <input
+      type="text"
+      class="form-control"
+      name="msg"
+      id="msgInput"
+      required
+      disabled
+    />
+  </div>
+  <button type="submit" class="btn btn-primary" id="sendMsg" disabled>
+    Enviar
+  </button>
+</form>
