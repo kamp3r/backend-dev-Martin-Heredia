@@ -9,6 +9,7 @@ logoutRouter.get('/', (req, res, next)=>{
             return next(err)
         }
     })
+    res.clearCookie('session.mongoDB')
     res.render('logout')
 })
 
