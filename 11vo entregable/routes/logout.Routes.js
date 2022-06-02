@@ -2,10 +2,14 @@ import express from 'express'
 
 const logoutRouter = express.Router()
 
-logoutRouter.get('/', (req, res)=>{
+logoutRouter.get('/', (req, res, next)=>{
     res.locals.currentUser = req.user
+    req.logout((err)=>{
+        if(err){
+            return next(err)
+        }
+    })
     res.render('logout')
-    res.clearCookie('session.mongoDB')
 })
 
 logoutRouter.post('/', (req, res) => {
