@@ -1,0 +1,62 @@
+{
+  "id":"1000",
+  "nombre":"CoderFalse",
+  "gerente": {
+    "id":"2",
+    "nombre":"Juan",
+    "apellido":"Perez",
+    "DNI": "12345678",
+    "direccion":"CABA 123",
+    "telefono":"12345678"
+  },
+  "encargado": {
+    "id":"3",
+    "nombre":"Pedro",
+    "apellido":"Gomez",
+    "DNI":"32123142",
+    "direccion":"CABA 124",
+    "telefono":"12345678"
+  },
+  "empleados": [
+    {
+      "id":"1",
+      "nombre":"Nuria",
+      "apellido":"Zamora",
+      "DNI":"213321123",
+      "direccion":"CABA 125",
+      "telefono":"12345678"
+    },
+    {
+      "id":"4",
+      "nombre":"Felipe",
+      "apellido":"Gonzalez",
+      "DNI":"213412421",
+      "direccion":"CABA 126",
+      "telefono":"12345678"
+    },
+    {
+      "id":"5",
+      "nombre":"Jaimita",
+      "apellido":"Lalan",
+      "DNI":"213412661",
+      "direccion":"CABA 127",
+      "telefono": "12345678"
+    },
+    {
+      "id": "6",
+      "nombre":"Nicolas",
+      "apellido":"Guma",
+      "DNI": "46646556",
+      "direccion":"CABA 128",
+      "telefono": "12345678"
+    },
+    {
+      "id":"7",
+      "nombre":"Samuel",
+      "apellido":"Jackson",
+      "DNI":"123456789",
+      "direccion":"CABA 129",
+      "telefono":"789456123"
+    }
+  ]
+}

@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './TableManage.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./TableManage.css";
+import Spinnerx from "../Spinner/Spinnerx";
 import {
   Table,
   Modal,
@@ -9,27 +10,28 @@ import {
   ModalFooter,
   ModalHeader,
   Button,
-} from 'reactstrap';
+} from "reactstrap";
 
-const formatoNumero = new Intl.NumberFormat('en-EN', {
-  style: 'currency',
-  currency: 'USD',
+const formatoNumero = new Intl.NumberFormat("en-EN", {
+  style: "currency",
+  currency: "USD",
 });
 
 const TableManage = () => {
   const [data, setData] = useState([]);
-  const [modalType, setModalType] = useState('');
-  const [DB, setDB] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [modalType, setModalType] = useState("");
+  const [DB, setDB] = useState("");
   const [modal, setModal] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [formData, setFormData] = useState({
-    id: '',
-    title: '',
-    price: '',
-    thumbnail: '',
-    description: '',
-    code: '',
-    stock: '',
+    id: "",
+    title: "",
+    price: "",
+    thumbnail: "",
+    description: "",
+    code: "",
+    stock: "",
   });
 
   const modalAction = () => {
@@ -41,7 +43,11 @@ const TableManage = () => {
   };
 
   useEffect(() => {
-    fetchProducts();
+    setTimeout(() => {
+      setLoading(true);
+      fetchProducts();
+      setLoading(false)
+    }, 2000);
   }, []);
 
   const inputChange = (e) => {
@@ -50,26 +56,34 @@ const TableManage = () => {
   };
 
   const handlerChangeDB = (e) => {
-    setDB(e.target.value);
+    if(e.target.value === ""){
+      alert('No seleccionaste una base de datos')
+    }else{
+      setDB(e.target.value)
+    }
+    ;
   };
 
   const persistDB = async () => {
+    if(DB === ""){
+      alert('No seleccionaste una base de datos')
+    }else{
     await axios.post(`http://localhost:8080/api/persist`, {
       persist: DB,
     });
-    await fetchProducts();
-  };
+  }}
+  ;
 
   const fetchProducts = async () => {
     await axios
-      .get('http://localhost:8080/api/products/')
+      .get("http://localhost:8080/api/products/")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   };
 
   const postData = async () => {
     await axios
-      .post('http://localhost:8080/api/products/', formData)
+      .post("http://localhost:8080/api/products/", formData)
       .then((res) => {
         fetchProducts();
         modalAction();
@@ -79,7 +93,7 @@ const TableManage = () => {
 
   const putData = async () => {
     await axios
-      .put('http://localhost:8080/api/products/' + formData.id, formData)
+      .put("http://localhost:8080/api/products/" + formData.id, formData)
       .then((res) => {
         modalAction();
         fetchProducts();
@@ -89,7 +103,7 @@ const TableManage = () => {
 
   const deleteData = async () => {
     await axios
-      .delete('http://localhost:8080/api/products/' + formData.id)
+      .delete("http://localhost:8080/api/products/" + formData.id)
       .then((res) => {
         modalEliminarAction();
         fetchProducts();
@@ -98,7 +112,7 @@ const TableManage = () => {
   };
 
   const takeData = (item) => {
-    setModalType('update');
+    setModalType("update");
     setFormData({
       id: item.id || item._id,
       title: item.title,
@@ -110,30 +124,44 @@ const TableManage = () => {
     });
   };
 
+  const reloading = () => {
+    setTimeout(() => {
+      window.location.reload(true);
+    }, 2000);
+  };
+
   return (
     <>
       <div>
-        <select name='persist' id='persist' onChange={handlerChangeDB}>
-          <option value={'fileSystem'}>FileSystem</option>
-          <option value={'firebase'}>Firebase</option>
-          <option value={'memory'}>Memory</option>
-          <option value={'mongodb'}>MongoDB</option>
+        <select name="persist" id="persist" onChange={handlerChangeDB}>
+          <option value={""}>----------</option>
+          <option value={"fileSystem"}>FileSystem</option>
+          <option value={"firebase"}>Firebase</option>
+          <option value={"memory"}>Memory</option>
+          <option value={"mongodb"}>MongoDB</option>
         </select>
-        <Button onClick={persistDB}>Seleccionar</Button>
+        <Button
+          onClick={() => {
+            persistDB();
+            reloading();
+          }}
+        >
+          Seleccionar
+        </Button>
       </div>
-      <>
-      <div className='buttonContainer'>
+      <div className="buttonContainer">
         <button
           onClick={() => {
-            setFormData('null');
-            setModalType('post');
+            setFormData("null");
+            setModalType("post");
             modalAction();
           }}
-          className='btn btn-warning buttonazoAgregar'
+          className="btn btn-warning buttonazoAgregar"
         >
           Agregar Producto
         </button>
       </div>
+      {loading ? <Spinnerx/> :
       <Table>
         <thead>
           <tr>
@@ -147,7 +175,7 @@ const TableManage = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
+          { data.map((item) => (
             <tr key={item.id || item._id}>
               <td>{item.id || item._id}</td>
               <td>{item.title}</td>
@@ -159,15 +187,15 @@ const TableManage = () => {
               <td>{item.code}</td>
               <td>
                 <i
-                  className='fa-solid fa-eraser'
+                  className="fa-solid fa-eraser"
                   onClick={() => {
                     takeData(item);
                     modalEliminarAction();
                   }}
                 ></i>
-                {'   '}
+                {"   "}
                 <i
-                  className='fa-solid fa-pen-to-square'
+                  className="fa-solid fa-pen-to-square"
                   onClick={() => {
                     takeData(item);
                     modalAction();
@@ -178,88 +206,89 @@ const TableManage = () => {
           ))}
         </tbody>
       </Table>
+      }
 
-      <Modal centered fullscreen='md' scrollable size='lg' isOpen={modal}>
+      <Modal centered fullscreen="md" scrollable size="lg" isOpen={modal}>
         <ModalHeader>Carga tu producto</ModalHeader>
         <ModalBody>
-          <div className='form-group formularioDeCarga'>
-            <label htmlFor='id'>ID</label>
+          <div className="form-group formularioDeCarga">
+            <label htmlFor="id">ID</label>
             <input
-              className='form-control'
+              className="form-control"
               readOnly
-              type='text'
-              name='id'
-              id='id'
+              type="text"
+              name="id"
+              id="id"
               onChange={inputChange}
               value={formData ? formData.id : data.length + 1}
             />
-            <label htmlFor='title'>Title</label>
+            <label htmlFor="title">Title</label>
             <input
-              className='form-control'
-              type='text'
-              name='title'
-              placeholder='Nombre del producto'
+              className="form-control"
+              type="text"
+              name="title"
+              placeholder="Nombre del producto"
               onChange={inputChange}
-              value={formData ? formData.title : ''}
+              value={formData ? formData.title : ""}
             />
-            <label htmlFor='price'>Price</label>
+            <label htmlFor="price">Price</label>
             <input
-              className='form-control'
-              type='number'
-              name='price'
-              placeholder='Precio del producto'
+              className="form-control"
+              type="number"
+              name="price"
+              placeholder="Precio del producto"
               onChange={inputChange}
-              value={formData ? formData.price : ''}
+              value={formData ? formData.price : ""}
             />
-            <label htmlFor='thumbnail'>Thumbnail</label>
+            <label htmlFor="thumbnail">Thumbnail</label>
             <input
-              className='form-control'
-              type='url'
-              name='thumbnail'
-              placeholder='Cargar URL de imagen a mostrar'
+              className="form-control"
+              type="url"
+              name="thumbnail"
+              placeholder="Cargar URL de imagen a mostrar"
               onChange={inputChange}
-              value={formData ? formData.thumbnail : ''}
+              value={formData ? formData.thumbnail : ""}
             />
-            <label htmlFor='description'>Description</label>
+            <label htmlFor="description">Description</label>
             <input
-              className='form-control'
-              type='text'
-              name='description'
-              placeholder='Descripción del producto'
+              className="form-control"
+              type="text"
+              name="description"
+              placeholder="Descripción del producto"
               onChange={inputChange}
-              value={formData ? formData.description : ''}
+              value={formData ? formData.description : ""}
             />
-            <label htmlFor='code'>Code</label>
+            <label htmlFor="code">Code</label>
             <input
-              className='form-control'
-              type='text'
-              name='code'
-              placeholder='Codigo del producto'
+              className="form-control"
+              type="text"
+              name="code"
+              placeholder="Codigo del producto"
               onChange={inputChange}
-              value={formData ? formData.code : ''}
+              value={formData ? formData.code : ""}
             />
-            <label htmlFor='stock'>Stock</label>
+            <label htmlFor="stock">Stock</label>
             <input
-              className='form-control'
-              type='text'
-              name='stock'
-              placeholder='Stock del producto'
+              className="form-control"
+              type="text"
+              name="stock"
+              placeholder="Stock del producto"
               onChange={inputChange}
-              value={formData ? formData.stock : ''}
+              value={formData ? formData.stock : ""}
             />
           </div>
         </ModalBody>
         <ModalFooter>
-          {modalType === 'post' ? (
-            <Button color='success' size='lg' onClick={postData}>
+          {modalType === "post" ? (
+            <Button color="success" size="lg" onClick={postData}>
               Cargar Producto
             </Button>
           ) : (
-            <Button color='success' size='lg' onClick={putData}>
+            <Button color="success" size="lg" onClick={putData}>
               Actualizar Producto
             </Button>
           )}
-          <Button color='danger' size='lg' onClick={modalAction}>
+          <Button color="danger" size="lg" onClick={modalAction}>
             Cancel
           </Button>
         </ModalFooter>
@@ -267,27 +296,26 @@ const TableManage = () => {
 
       <Modal
         centered
-        fullscreen='md'
+        fullscreen="md"
         scrollable
-        size='lg'
+        size="lg"
         isOpen={modalEliminar}
       >
         <ModalHeader>
-          <p className='textoHeader'>Requiere confirmacion</p>
+          <p className="textoHeader">Requiere confirmacion</p>
         </ModalHeader>
         <ModalBody>
-          <p className='textoCuerpo'>¿Deseas eliminar este producto?</p>
+          <p className="textoCuerpo">¿Deseas eliminar este producto?</p>
         </ModalBody>
         <ModalFooter>
-          <Button color='success' size='lg' onClick={deleteData}>
+          <Button color="success" size="lg" onClick={deleteData}>
             Eliminar Producto
           </Button>
-          <Button color='danger' size='lg' onClick={modalEliminarAction}>
+          <Button color="danger" size="lg" onClick={modalEliminarAction}>
             Cancel
           </Button>
         </ModalFooter>
       </Modal>
-      </>
     </>
   );
 };

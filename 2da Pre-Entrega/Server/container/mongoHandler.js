@@ -13,7 +13,6 @@ class MongoHandler {
   async readAll() {
     try {
       const data = await this.collection.find();
-      console.log(data);
       return data;
     } catch (err) {
       console.error(err);

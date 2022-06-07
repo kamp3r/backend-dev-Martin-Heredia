@@ -1,11 +1,5 @@
 import express from 'express';
 import { isAuthenticated } from '../middlewares/authMiddleware.js';
-import { fork } from 'child_process';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const processRouter = express.Router();
 
@@ -31,19 +25,6 @@ processRouter.get('/info', isAuthenticated, (req, res, next) => {
 
 //random operation
 
-processRouter.get('/randoms', async(req, res) => {
-    const num = req.query.cant || 100;
-    const randoms = fork('./utils/calcRandom.js', [num]);
-    
-    randoms.send("start");
-  
-    randoms.on("error", (err) => {
-      console.log(`Error en child process 'random' ${err}`);
-    });
-  
-    randoms.on("message", (obj) => {
-      return res.json(obj);
-    });
-  });
+
 
 export default processRouter;

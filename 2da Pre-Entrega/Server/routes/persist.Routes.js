@@ -12,7 +12,6 @@ persistRoute.get('/', async (req, res) => {
 persistRoute.post('/', async (req, res) => {
   const db = req.body.persist;
   const write = await fs.writeFile('.env', `DATABASE=${db}`);
-  console.log(write);
 });
 
 export default persistRoute;

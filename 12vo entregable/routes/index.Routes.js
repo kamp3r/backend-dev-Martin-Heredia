@@ -4,6 +4,7 @@ import logoutRouter from "./logout.Routes.js";
 import registerRouter from "./register.Routes.js";
 import initialRouter from "./initial.Routes.js";
 import processRouter from "./process.Routes.js";
+import random from "./randoms.Routes.js";
 
 
 const routerApi = (app) =>{
@@ -13,6 +14,7 @@ const routerApi = (app) =>{
     app.use('/logout', logoutRouter);
     app.use('/', initialRouter)
     app.use('/', processRouter)
+    app.use('/', random)
 }
 
 export default routerApi;

@@ -1,7 +1,7 @@
 import express from 'express';
 import 'dotenv/config';
 import { Server as HttpServer } from 'http';
-import { connect } from './sockets.js';
+import { connect } from './sockets/sockets.js';
 import appMiddlewares from './middlewares/appMiddlewares.js';
 
 import './passport/auth-local.js';

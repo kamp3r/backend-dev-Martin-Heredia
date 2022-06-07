@@ -1,5 +1,5 @@
 import { Server as IOServer } from 'socket.io';
-import { chatHandler } from './daos/index.daos.js';
+import { chatHandler } from '../daos/index.daos.js';
 
 const connect = (server)=>{
     const io = new IOServer(server);
