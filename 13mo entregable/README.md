@@ -58,6 +58,7 @@ Se debera ir a la carpeta nginx1.21.6 comentar el METODO 1, y descomentar el MET
 Comentando con CTRL + K y CTRL + C 
 Descomentando con CTRL + K y CTRL + U
 
+Con PM2
 ```bash
     start nginx
     pm2 start server.js --name="server1" --watch -- -- 8081
@@ -65,4 +66,15 @@ Descomentando con CTRL + K y CTRL + U
     pm2 start server.js --name="server3" --watch -- -- 8083
     pm2 start server.js --name="server4" --watch -- -- 8084
     pm2 start server.js --name="server5" --watch -- -- 8085
+```
+
+Con Cluster Nativo: (si tiene limitaciones de CPU CORES, recomendable hacerlo en fork mode)
+
+```bash
+    start nginx
+    nodemon server.js 8081 cluster
+    nodemon server.js 8082 cluster
+    nodemon server.js 8083 cluster
+    nodemon server.js 8084 cluster
+    nodemon server.js 8085 cluster
 ```
