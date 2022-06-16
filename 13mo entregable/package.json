@@ -1,10 +1,10 @@
 {
-  "type": "module",
   "name": "process-object",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
+    "build": "babel ./ --ignore node_modules -d dist",
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -31,6 +31,9 @@
     "yargs": "^17.5.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
     "@faker-js/faker": "^6.3.1",
     "nodemon": "^2.0.15"
   }

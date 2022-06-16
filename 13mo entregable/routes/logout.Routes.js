@@ -1,6 +1,4 @@
-import express from 'express'
-
-const logoutRouter = express.Router()
+const logoutRouter = require('express').Router();
 
 logoutRouter.get('/', (req, res, next)=>{
     res.locals.currentUser = req.user
@@ -18,4 +16,4 @@ logoutRouter.post('/', (req, res) => {
     req.logout()
 })
 
-export default logoutRouter;
+module.exports = logoutRouter;

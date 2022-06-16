@@ -1,17 +1,16 @@
-import yargs from 'yargs';
-import {hideBin} from 'yargs/helpers'
-import MongoStore from 'connect-mongo';
-import mongoose from 'mongoose';
-import session from 'express-session';
+const yargs =  require('yargs');
+const {hideBin} =  require('yargs/helpers');
+const MongoStore =  require('connect-mongo');
+const session =  require('express-session');
 
 const connectSession = (app) => {
   app.use(
     session({
       secret: String(process.env.SECRET),
-      store: new MongoStore({ client: mongoose.connection.getClient() }),
+      store: MongoStore.create({ mongoUrl: process.env.DB_URL, mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true} }),
       resave: true,
       rolling: true,
-      saveUninitialized: false,
+      saveUninitialized: true,
       cookie: {
         maxAge: 60000,
       },
@@ -30,4 +29,4 @@ const { PORT } = yargs(hideBin(process.argv)).alias({
 
 
 
-export { connectSession, PORT };
+module.exports = { connectSession, PORT };

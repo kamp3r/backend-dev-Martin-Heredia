@@ -1,7 +1,6 @@
-import express from 'express';
-import { isAuthenticated } from '../middlewares/authMiddleware.js';
-import os from 'os'
-const processRouter = express.Router();
+const { isAuthenticated } = require('../middlewares/authMiddleware.js');
+const os = require('os');
+const processRouter = require('express').Router();
 
 //process argv
 
@@ -26,6 +25,4 @@ processRouter.get('/info', isAuthenticated, (req, res, next) => {
 
 //random operation
 
-
-
-export default processRouter;
+module.exports = processRouter;

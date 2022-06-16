@@ -1,15 +1,15 @@
-import express from 'express';
-import { flashMessages } from './flashMessages.js';
-import { connectSession } from '../config/configDB.js';
-import routerApi from '../routes/index.Routes.js';
-import cors from 'cors';
-import cookieParser from 'cookie-parser';
-import passport from 'passport';
-import flash from 'connect-flash';
+const express =  require('express');
+const { flashMessages } =  require('./flashMessages.js');
+const { connectSession } =  require('../config/configDB.js');
+const routerApi =  require('../routes/index.Routes.js');
+const cors =  require('cors');
+const cookieParser =  require('cookie-parser');
+const passport =  require('passport');
+const flash =  require('connect-flash');
 
 const appMiddlewares = (app) => {
   app.use(cors())
-  // app.use(express.static('public'));
+  app.use(express.static('public'));
   app.use(cookieParser());
   app.set('view engine', 'ejs');
   app.set('views', './public/views');
@@ -23,4 +23,4 @@ const appMiddlewares = (app) => {
   routerApi(app);
 };
 
-export default appMiddlewares;
+module.exports = appMiddlewares;

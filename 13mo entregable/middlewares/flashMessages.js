@@ -1,4 +1,4 @@
-export const flashMessages = (app)=>{
+const flashMessages = (app)=>{
     app.use((req, res, next)=>{
        app.locals.signUpMessage = req.flash('signUpMessage');
        app.locals.signInMessage = req.flash('signInMessage');
@@ -7,3 +7,4 @@ export const flashMessages = (app)=>{
     })
 }
 
+module.exports = {flashMessages};

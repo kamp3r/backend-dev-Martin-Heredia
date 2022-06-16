@@ -1,10 +1,10 @@
-import productFakeRoute from "./products.Routes.js";
-import loginRouter from "./login.Routes.js";
-import logoutRouter from "./logout.Routes.js";
-import registerRouter from "./register.Routes.js";
-import initialRouter from "./initial.Routes.js";
-import processRouter from "./process.Routes.js";
-import random from "./randoms.Routes.js";
+const productFakeRoute =  require("./products.Routes.js");
+const loginRouter =  require("./login.Routes.js");
+const logoutRouter =  require("./logout.Routes.js");
+const registerRouter =  require("./register.Routes.js");
+const initialRouter =  require("./initial.Routes.js");
+const processRouter =  require("./process.Routes.js");
+const random =  require("./randoms.Routes.js");
 
 
 const routerApi = (app) =>{
@@ -17,4 +17,4 @@ const routerApi = (app) =>{
     app.use('/', random)
 }
 
-export default routerApi;
+module.exports = routerApi;

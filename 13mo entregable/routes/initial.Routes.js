@@ -1,6 +1,4 @@
-import express from "express";
-
-const initialRouter = express.Router();
+const initialRouter = require('express').Router();
 
 initialRouter.get('/', (req, res) => {
     if(req.isAuthenticated()){
@@ -15,4 +13,4 @@ initialRouter.get('/home', (req, res) => {
     res.render('home', {userName});
 })
 
-export default initialRouter;
+module.exports = initialRouter;

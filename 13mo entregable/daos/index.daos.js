@@ -1,5 +1,7 @@
-import ChatHandler from "./chat/ChatHandler.js";
-import UserHandler from "./user/userHandler.js";
+const ChatHandler = require ("./chat/ChatHandler.js");
+const UserHandler = require("./user/userHandler.js");
 
-export const chatHandler = new ChatHandler();
-export const userDao = new UserHandler();
+const chatHandler = new ChatHandler();
+const userDao = new UserHandler();
+
+module.exports= {chatHandler, userDao};

@@ -1,7 +1,6 @@
-import express from 'express';
-import passport from 'passport'
+const passport =  require('passport');
 
-const loginRouter = express.Router();
+const loginRouter = require('express').Router();
 
 loginRouter.get('/', (req, res) => {
   if(!req.isAuthenticated()){
@@ -15,4 +14,4 @@ loginRouter.get('/', (req, res) => {
 loginRouter.post('/', passport.authenticate('signin', {successRedirect: '/home', failureRedirect:'/login', passReqToCallback:true}))
 
 
-export default loginRouter;
+module.exports = loginRouter;

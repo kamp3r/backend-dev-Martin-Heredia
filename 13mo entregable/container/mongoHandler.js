@@ -1,8 +1,16 @@
-import mongoose from 'mongoose';
-import {v4 as uuidv4} from 'uuid'
-import {schema, normalize} from 'normalizr';
+const mongoose =  require('mongoose');
+const {v4: uuidv4} =  require('uuid');
+const {schema, normalize} =  require('normalizr');
 
-await mongoose.connect(process.env.DB_URL)
+const connect = async() => {
+    try{
+        await mongoose.connect(process.env.DB_URL)
+    }catch(err){
+        console.log(err)
+    }
+}
+
+connect()
 
 class MongoHandler {
     constructor(collName, schema) {
@@ -51,4 +59,4 @@ class MongoHandler {
 
 }
 
-export default MongoHandler;
+module.exports = MongoHandler;

@@ -1,4 +1,4 @@
-import MongoHandler from "../../container/mongoHandler.js";
+const MongoHandler =  require("../../container/mongoHandler.js");
 
 class ChatHandler extends MongoHandler{
     constructor(){
@@ -17,4 +17,4 @@ class ChatHandler extends MongoHandler{
     }
 }
 
-export default ChatHandler;
+module.exports = ChatHandler;

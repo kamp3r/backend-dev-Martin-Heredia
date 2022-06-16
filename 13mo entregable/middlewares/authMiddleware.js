@@ -1,4 +1,4 @@
-export const isAuthenticated = (req,res,next)=>{
+const isAuthenticated = (req,res,next)=>{
     if(req.isAuthenticated()){
         res.locals.currentUser = req.user
         return next()
@@ -6,3 +6,5 @@ export const isAuthenticated = (req,res,next)=>{
         res.redirect('/')
     }
 }
+
+module.exports = {isAuthenticated}

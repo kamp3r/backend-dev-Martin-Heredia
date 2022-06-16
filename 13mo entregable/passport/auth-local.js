@@ -1,6 +1,6 @@
-import passport from 'passport';
-import LocalStrategy from 'passport-local';
-import { userDao } from '../daos/index.daos.js';
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const { userDao } = require('../daos/index.daos.js');
 
 passport.use(
   'signup',
@@ -60,12 +60,11 @@ passport.use(
   )
 );
 
-
 passport.serializeUser((user, done) => {
   done(null, user);
 });
 
-passport.deserializeUser(async(username, done) => {
-  const user = await userDao.findOne(username)
+passport.deserializeUser(async (username, done) => {
+  const user = await userDao.findOne(username);
   done(null, user);
 });

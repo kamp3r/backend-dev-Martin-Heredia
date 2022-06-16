@@ -1,5 +1,5 @@
-import MongoHandler from '../../container/mongoHandler.js';
-import bcrypt from 'bcrypt';
+const MongoHandler =  require('../../container/mongoHandler.js');
+const bcrypt =  require('bcrypt');
 
 class UserHandler extends MongoHandler {
   constructor() {
@@ -18,4 +18,4 @@ class UserHandler extends MongoHandler {
   }
 }
 
-export default UserHandler;
+module.exports = UserHandler;

@@ -1,13 +1,12 @@
-import express from 'express';
-import 'dotenv/config';
-import { PORT } from './config/configDB.js';
-import { Server as HttpServer } from 'http';
-import { connect } from './sockets/sockets.js';
-import os from 'os';
-import appMiddlewares from './middlewares/appMiddlewares.js';
-import cluster from 'cluster';
-
-import './passport/auth-local.js';
+const express = require('express');
+require('dotenv').config();
+const { PORT } = require('./config/configDB.js');
+const HttpServer = require('http').Server;
+const { connect } = require('./sockets/sockets.js');
+const os = require('os')
+const appMiddlewares = require('./middlewares/appMiddlewares.js');
+const cluster = require('cluster')
+require('./passport/auth-local.js');
 
 
 const clusterProcess = process.argv[3] == 'cluster'

@@ -1,14 +1,18 @@
-import express from 'express';
-import passport from 'passport'
- 
-const registerRouter = express.Router();
+const passport = require('passport');
+
+const registerRouter = require('express').Router();
 
 registerRouter.get('/', (req, res, next) => {
-    res.render('register');
-})
+  res.render('register');
+});
 
-registerRouter.post('/', passport.authenticate('signup', {successRedirect: '/login', failureRedirect:'/register', passReqToCallback:true})
+registerRouter.post(
+  '/',
+  passport.authenticate('signup', {
+    successRedirect: '/login',
+    failureRedirect: '/register',
+    passReqToCallback: true,
+  })
+);
 
-)
-
-export default registerRouter;
+module.exports = registerRouter;

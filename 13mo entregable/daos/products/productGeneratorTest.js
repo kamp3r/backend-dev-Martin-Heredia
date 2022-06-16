@@ -1,8 +1,8 @@
-import { faker } from '@faker-js/faker'
+const { faker } =  require('@faker-js/faker');
 
 faker.locale = 'es'
 
-export const productGenerator = (qty)=>{
+const productGenerator = (qty)=>{
     let products = []
     for(let i = 0; i < qty; i++){
         products.push({
@@ -14,3 +14,5 @@ export const productGenerator = (qty)=>{
     }
     return products
 }
+
+module.exports = {productGenerator}

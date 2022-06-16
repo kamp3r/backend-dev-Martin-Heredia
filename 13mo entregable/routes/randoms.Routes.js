@@ -1,7 +1,8 @@
-import express from 'express';
-import { fork } from 'child_process';
+const { fork } = require('child_process');
+const { pid } = require('process');
+const { PORT } = require('../config/configDB');
 
-const random = express.Router();
+const random = require('express').Router();
 
 random.get('/randoms', (req, res) => {
   let qty = req.query.cant || 100000000;
@@ -9,8 +10,9 @@ random.get('/randoms', (req, res) => {
   const randoms = fork('./utils/calcRandom.js', ['--QTYRECIBED', qty]);
 
   randoms.on('message', (response) => {
-    res.json(response);
+    res.json(
+      {"PID": pid,"PORT": PORT,"Randoms Numbs": response});
   });
 });
 
-export default random;
+module.exports = random;
