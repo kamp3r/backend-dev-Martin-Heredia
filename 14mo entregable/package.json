@@ -1,0 +1,44 @@
+{
+  "name": "process-object",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "babel ./ --ignore node_modules -d dist",
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fork": "nodemon server.js 8080 fork",
+    "cluster": "nodemon server.js 8080 cluster"
+  },
+  "author": "Martin Heredia",
+  "license": "MIT",
+  "dependencies": {
+    "autocannon": "^7.9.0",
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.17.3",
+    "express-session": "^1.17.3",
+    "faker": "github:faker-js/faker",
+    "minimist": "^1.2.6",
+    "mongoose": "^6.3.3",
+    "normalizr": "^3.6.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.4.1",
+    "uuid": "^8.3.2",
+    "winston": "^3.7.2",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@faker-js/faker": "^6.3.1",
+    "nodemon": "^2.0.15"
+  }
+}

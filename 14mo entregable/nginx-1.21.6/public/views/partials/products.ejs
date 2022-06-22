@@ -1,0 +1,26 @@
+<div class="container-md">
+  <h3 class="text-success mt-2">Lista de Productos</h3>
+
+  <table class="table text-success">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Price</th>
+        <th scope="col">Imagen</th>
+      </tr>
+    </thead>
+    <tbody id="trTable">
+      <%listElem.forEach(prod => { %>
+      <tr>
+        <td><%=prod.id %></td>
+        <td><%=prod.title %></td>
+        <td><%=prod.price %></td>
+        <td>
+          <img src="<%=prod.thumbnail%>" alt="<%=prod.title %>" width="75" />
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
