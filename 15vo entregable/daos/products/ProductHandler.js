@@ -10,7 +10,7 @@ class ProductDaoMongo extends MongoHandler {
             description: { type: String, required: true },
             code: { type: String, required: true },
             stock: { type: Number, required: true },
-            timestamp: { type: Date, required: true },
+            timestamp: { type: Date },
         });
     }
 }
