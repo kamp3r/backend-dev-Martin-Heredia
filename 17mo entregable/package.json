@@ -1,0 +1,51 @@
+{
+  "name": "3ra-preentrega-herediamartin",
+  "version": "1.0.0",
+  "description": "3ra pre entrega del proyecto del curso de Backend de coderhouse",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "build:css": "postcss public/css/custom.css -o public/css/style.css"
+  },
+  "keywords": [
+    "preentrega",
+    "proyecto",
+    "final",
+    "coderhouse"
+  ],
+  "author": "Martin Omar Heredia",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/boom": "^10.0.0",
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "daisyui": "^2.19.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "joi": "^17.6.0",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.3",
+    "mongoose": "^6.4.1",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.7.7",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "postcss-cli": "^10.0.0",
+    "socket.io": "^4.5.1",
+    "twilio": "^3.78.0",
+    "uuid": "^8.3.2",
+    "winston": "^3.8.1",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "nodemon": "^2.0.18",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.4"
+  }
+}
