@@ -7,9 +7,9 @@ const cartRouter = require('./cart.routes');
 const routerAPI = (app) => {
   app.use('/api/products', ProductRouter);
   app.use('/auth', AuthRouter);
-  app.use('/', ejsRouter);
-  app.use('*', errorRouter);
-  app.use('/cart', cartRouter);
+  // app.use('/', ejsRouter);
+  // app.use('*', errorRouter);
+  // app.use('/cart', cartRouter);
 };
 
 module.exports = routerAPI;

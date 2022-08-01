@@ -1,23 +1,17 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
+    _id: { type: String },
     name: { type: String, required: true },
     lastName: { type: String, required: true },
-    address: { type: String, required: true },
-    phone: { type: String, required: true },
-    email: { type: String, required: true },
-    password: { type: String, required: true },
-    profilePicture: { type: String, required: true },
-    timestamp: { type: Date, default: new Date.toLocaleString() },
+    email: { type: String, required: true, unique: true },
+    address: { type: String },
+    phone: { type: String, required: true, unique: true },
+    password: { type: String, required: true},
+    picture: { data: Buffer, type: String },
+    role: { type: String, default: 'user', enum: ['user', 'admin'] },
+    createdAt: { type: Date},
 })
-
-userSchema.pre('save', async(next)=> { 
-    const salt = await bcrypt.genSalt(10);
-    const hash = await bcrypt.hash(this.password, salt);
-    this.password = hash;
-    next();
-});
 
 module.exports = {
     User: mongoose.model('User', userSchema),
