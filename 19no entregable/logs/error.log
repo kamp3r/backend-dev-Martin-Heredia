@@ -1,0 +1,237 @@
+[LOGGER] - 29-07-22 18:36:59 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 18:37:25 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 18:37:35 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 18:42:12 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 18:47:02 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 18:50:39 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 18:51:27 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 19:43:37 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 19:44:57 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 19:46:50 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 19:47:46 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 19:49:12 - [error] - Error retrieving products
+[LOGGER] - 29-07-22 19:52:00 - [error] - Error retrieving products
+[LOGGER] - 30-07-22 17:26:16 - [error] - undefined
+[LOGGER] - 30-07-22 17:27:46 - [error] - undefined
+[LOGGER] - 30-07-22 17:27:51 - [error] - Error retrieving products
+[LOGGER] - 30-07-22 17:28:54 - [error] - undefined
+[LOGGER] - 30-07-22 17:28:59 - [error] - Error retrieving products
+[LOGGER] - 30-07-22 17:31:53 - [error] - undefined
+[LOGGER] - 30-07-22 17:33:49 - [error] - undefined
+[LOGGER] - 30-07-22 17:33:52 - [error] - Error retrieving products
+[LOGGER] - 30-07-22 17:35:24 - [error] - Error loading Product persistence Cannot find module '../Product/mongoDB'
+Require stack:
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\DAO\factory.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\services\ProductService.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\controllers\Product.controller.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\routes\product.routes.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\routes\index.routes.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\middlewares\app.middleware.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\server.js
+[LOGGER] - 30-07-22 17:36:24 - [error] - Error loading Product persistence Date.toLocaleString is not a constructor
+[LOGGER] - 30-07-22 17:42:32 - [error] - Error retrieving products
+[LOGGER] - 30-07-22 17:43:11 - [error] - Error retrieving products
+[LOGGER] - 30-07-22 17:43:36 - [error] - Error retrieving products
+[LOGGER] - 30-07-22 18:03:29 - [error] - undefined
+[LOGGER] - 30-07-22 18:05:12 - [error] - undefined
+[LOGGER] - 30-07-22 19:44:31 - [error] - Error loading User persistence instance is not defined
+[LOGGER] - 30-07-22 21:14:04 - [error] - Error:  UserService.readOne is not a function
+[LOGGER] - 30-07-22 21:14:46 - [error] - Error:  User not found
+[LOGGER] - 30-07-22 21:16:54 - [error] - undefined
+[LOGGER] - 30-07-22 21:17:20 - [error] - undefined
+[LOGGER] - 30-07-22 21:17:45 - [error] - undefined
+[LOGGER] - 30-07-22 21:17:55 - [error] - undefined
+[LOGGER] - 30-07-22 21:21:14 - [error] - undefined
+[LOGGER] - 30-07-22 21:22:55 - [error] - undefined
+[LOGGER] - 30-07-22 21:25:44 - [error] - undefined
+[LOGGER] - 30-07-22 21:26:51 - [error] - undefined
+[LOGGER] - 30-07-22 21:27:55 - [error] - undefined
+[LOGGER] - 30-07-22 21:35:09 - [error] - Error:  data and hash arguments required
+[LOGGER] - 30-07-22 21:37:24 - [error] - Error:  User not found
+[LOGGER] - 30-07-22 21:38:11 - [error] - Error:  User not found
+[LOGGER] - 30-07-22 21:38:20 - [error] - Error:  data and hash arguments required
+[LOGGER] - 30-07-22 21:39:39 - [error] - Error:  User not found
+[LOGGER] - 30-07-22 21:40:17 - [error] - Error:  User not found
+[LOGGER] - 30-07-22 21:40:29 - [error] - Error:  User not found
+[LOGGER] - 30-07-22 21:41:28 - [error] - Error:  Error while generating token
+[LOGGER] - 30-07-22 21:41:55 - [error] - Error:  Error while generating token
+[LOGGER] - 30-07-22 21:43:52 - [error] - Error:  data and hash arguments required
+[LOGGER] - 30-07-22 21:44:01 - [error] - Error:  data and hash arguments required
+[LOGGER] - 30-07-22 23:07:30 - [error] - undefined
+[LOGGER] - 30-07-22 23:07:30 - [error] - Error updating user Cannot read properties of undefined (reading '1')
+[LOGGER] - 30-07-22 23:07:39 - [error] - undefined
+[LOGGER] - 30-07-22 23:07:39 - [error] - Error updating user Cannot read properties of undefined (reading '1')
+[LOGGER] - 30-07-22 23:08:03 - [error] - undefined
+[LOGGER] - 30-07-22 23:08:03 - [error] - Error updating user Cannot read properties of undefined (reading '1')
+[LOGGER] - 30-07-22 23:09:24 - [error] - undefined
+[LOGGER] - 30-07-22 23:09:24 - [error] - Error updating user Cannot read properties of undefined (reading '1')
+[LOGGER] - 30-07-22 23:09:33 - [error] - undefined
+[LOGGER] - 30-07-22 23:09:33 - [error] - Error updating user Cannot read properties of undefined (reading '1')
+[LOGGER] - 30-07-22 23:09:47 - [error] - undefined
+[LOGGER] - 30-07-22 23:09:47 - [error] - Error updating user Cannot read properties of undefined (reading '1')
+[LOGGER] - 30-07-22 23:11:16 - [error] - undefined
+[LOGGER] - 30-07-22 23:11:16 - [error] - Error updating user Cannot read properties of undefined (reading '1')
+[LOGGER] - 30-07-22 23:12:26 - [error] - undefined
+[LOGGER] - 30-07-22 23:12:26 - [error] - Error updating user Cannot read properties of undefined (reading '1')
+[LOGGER] - 30-07-22 23:12:45 - [error] - undefined
+[LOGGER] - 30-07-22 23:12:45 - [error] - Error updating user Cannot read properties of undefined (reading '1')
+[LOGGER] - 30-07-22 23:14:56 - [error] - undefined
+[LOGGER] - 30-07-22 23:14:56 - [error] - Error updating user Cannot read properties of undefined (reading '1')
+[LOGGER] - 30-07-22 23:15:41 - [error] - undefined
+[LOGGER] - 30-07-22 23:15:41 - [error] - Error updating user Cannot read properties of undefined (reading '1')
+[LOGGER] - 30-07-22 23:15:58 - [error] - undefined
+[LOGGER] - 30-07-22 23:16:44 - [error] - undefined
+[LOGGER] - 01-08-22 02:19:09 - [error] - undefined
+[LOGGER] - 01-08-22 02:20:16 - [error] - Error:  User not found
+[LOGGER] - 01-08-22 02:22:43 - [error] - Error:  User not found
+[LOGGER] - 01-08-22 02:23:17 - [error] - Error:  User not found
+[LOGGER] - 01-08-22 02:23:31 - [error] - Error:  User not found
+[LOGGER] - 01-08-22 02:25:12 - [error] - Error:  Invalid password
+[LOGGER] - 01-08-22 02:26:33 - [error] - Error:  Cannot set headers after they are sent to the client
+[LOGGER] - 02-08-22 20:43:16 - [error] - Error loading Order persistence Cannot find module './InterfaceDao'
+Require stack:
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\DAO\Order\mongoDB.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\DAO\factory.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\services\ProductService.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\controllers\Product.controller.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\routes\product.routes.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\routes\index.routes.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\middlewares\app.middleware.js
+- C:\Users\marti\Documents\CoderHouse\Programacion Backend\18vo entregable\server.js
+[LOGGER] - 02-08-22 20:44:09 - [error] - Error:  User not found
+[LOGGER] - 02-08-22 20:44:26 - [error] - Error:  Invalid password
+[LOGGER] - 02-08-22 20:46:01 - [error] - undefined
+[LOGGER] - 02-08-22 20:46:35 - [error] - undefined
+[LOGGER] - 02-08-22 20:46:53 - [error] - undefined
+[LOGGER] - 02-08-22 21:02:01 - [error] - undefined
+[LOGGER] - 02-08-22 21:16:03 - [error] - undefined
+[LOGGER] - 02-08-22 21:42:48 - [error] - undefined
+[LOGGER] - 02-08-22 21:43:24 - [error] - undefined
+[LOGGER] - 02-08-22 21:46:49 - [error] - undefined
+[LOGGER] - 02-08-22 22:06:29 - [error] - undefined
+[LOGGER] - 02-08-22 22:09:48 - [error] - undefined
+[LOGGER] - 03-08-22 01:37:56 - [error] - undefined
+[LOGGER] - 03-08-22 01:38:04 - [error] - undefined
+[LOGGER] - 03-08-22 01:38:23 - [error] - undefined
+[LOGGER] - 03-08-22 01:38:40 - [error] - undefined
+[LOGGER] - 03-08-22 01:43:48 - [error] - undefined
+[LOGGER] - 03-08-22 01:44:25 - [error] - undefined
+[LOGGER] - 03-08-22 01:44:50 - [error] - undefined
+[LOGGER] - 03-08-22 01:45:49 - [error] - undefined
+[LOGGER] - 03-08-22 01:46:30 - [error] - undefined
+[LOGGER] - 03-08-22 01:47:06 - [error] - undefined
+[LOGGER] - 03-08-22 01:47:33 - [error] - undefined
+[LOGGER] - 03-08-22 01:48:29 - [error] - undefined
+[LOGGER] - 03-08-22 01:49:06 - [error] - undefined
+[LOGGER] - 03-08-22 01:52:40 - [error] - undefined
+[LOGGER] - 03-08-22 01:53:50 - [error] - undefined
+[LOGGER] - 03-08-22 01:54:07 - [error] - undefined
+[LOGGER] - 03-08-22 02:03:05 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 02:03:16 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 02:03:25 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 02:03:29 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 02:03:45 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 02:03:50 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 02:05:13 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 02:24:35 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 02:44:37 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 03:33:29 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 04:00:32 - [error] - undefined
+[LOGGER] - 03-08-22 04:00:39 - [error] - undefined
+[LOGGER] - 03-08-22 04:01:26 - [error] - undefined
+[LOGGER] - 03-08-22 04:01:43 - [error] - undefined
+[LOGGER] - 03-08-22 04:07:38 - [error] - undefined
+[LOGGER] - 03-08-22 04:07:46 - [error] - undefined
+[LOGGER] - 03-08-22 04:08:41 - [error] - undefined
+[LOGGER] - 03-08-22 04:08:45 - [error] - undefined
+[LOGGER] - 03-08-22 04:08:45 - [error] - undefined
+[LOGGER] - 03-08-22 04:08:52 - [error] - undefined
+[LOGGER] - 03-08-22 04:09:10 - [error] - undefined
+[LOGGER] - 03-08-22 04:09:18 - [error] - undefined
+[LOGGER] - 03-08-22 04:09:43 - [error] - undefined
+[LOGGER] - 03-08-22 04:09:49 - [error] - undefined
+[LOGGER] - 03-08-22 04:09:51 - [error] - undefined
+[LOGGER] - 03-08-22 04:10:32 - [error] - undefined
+[LOGGER] - 03-08-22 04:11:07 - [error] - undefined
+[LOGGER] - 03-08-22 04:11:11 - [error] - undefined
+[LOGGER] - 03-08-22 04:11:32 - [error] - undefined
+[LOGGER] - 03-08-22 04:11:42 - [error] - undefined
+[LOGGER] - 03-08-22 04:12:21 - [error] - undefined
+[LOGGER] - 03-08-22 04:12:48 - [error] - undefined
+[LOGGER] - 03-08-22 04:12:51 - [error] - undefined
+[LOGGER] - 03-08-22 04:13:06 - [error] - undefined
+[LOGGER] - 03-08-22 04:13:48 - [error] - undefined
+[LOGGER] - 03-08-22 04:13:55 - [error] - undefined
+[LOGGER] - 03-08-22 04:13:58 - [error] - undefined
+[LOGGER] - 03-08-22 04:14:33 - [error] - undefined
+[LOGGER] - 03-08-22 04:14:36 - [error] - undefined
+[LOGGER] - 03-08-22 04:18:19 - [error] - undefined
+[LOGGER] - 03-08-22 04:20:55 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 17:04:14 - [error] - undefined
+[LOGGER] - 03-08-22 17:04:24 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 17:04:33 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 17:05:07 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 17:05:12 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 17:05:21 - [error] - undefined
+[LOGGER] - 03-08-22 17:07:39 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 17:07:48 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 17:07:53 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 17:08:43 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 17:11:10 - [error] - undefined
+[LOGGER] - 03-08-22 17:14:25 - [error] - undefined
+[LOGGER] - 03-08-22 17:14:26 - [error] - undefined
+[LOGGER] - 03-08-22 17:14:27 - [error] - undefined
+[LOGGER] - 03-08-22 17:14:28 - [error] - undefined
+[LOGGER] - 03-08-22 17:14:29 - [error] - undefined
+[LOGGER] - 03-08-22 17:14:33 - [error] - undefined
+[LOGGER] - 03-08-22 17:15:14 - [error] - Token not provided
+[LOGGER] - 03-08-22 17:15:18 - [error] - Token not provided
+[LOGGER] - 03-08-22 17:33:12 - [error] - undefined
+[LOGGER] - 03-08-22 17:37:01 - [error] - undefined
+[LOGGER] - 03-08-22 17:44:00 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 17:51:11 - [error] - undefined
+[LOGGER] - 03-08-22 17:52:14 - [error] - undefined
+[LOGGER] - 03-08-22 17:55:00 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 18:15:14 - [error] - Error updating user
+[LOGGER] - 03-08-22 18:15:48 - [error] - Error updating user
+[LOGGER] - 03-08-22 18:19:56 - [error] - User not found
+[LOGGER] - 03-08-22 18:20:00 - [error] - User not found
+[LOGGER] - 03-08-22 18:20:01 - [error] - User not found
+[LOGGER] - 03-08-22 18:20:05 - [error] - User not found
+[LOGGER] - 03-08-22 18:20:09 - [error] - User not found
+[LOGGER] - 03-08-22 18:20:13 - [error] - undefined
+[LOGGER] - 03-08-22 18:20:20 - [error] - undefined
+[LOGGER] - 03-08-22 18:23:18 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 18:30:15 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 18:30:22 - [error] - Error:  Invalid password
+[LOGGER] - 03-08-22 19:39:56 - [error] - Error while verifying token
+[LOGGER] - 03-08-22 19:39:57 - [error] - Error while verifying token
+[LOGGER] - 03-08-22 19:39:58 - [error] - Error while verifying token
+[LOGGER] - 03-08-22 19:39:59 - [error] - Error while verifying token
+[LOGGER] - 03-08-22 19:42:27 - [error] - Error while verifying token
+[LOGGER] - 03-08-22 19:42:48 - [error] - Error:  Invalid password
+[LOGGER] - 04-08-22 00:02:57 - [error] - undefined
+[LOGGER] - 04-08-22 00:06:22 - [error] - undefined
+[LOGGER] - 04-08-22 00:07:04 - [error] - undefined
+[LOGGER] - 04-08-22 00:09:46 - [error] - undefined
+[LOGGER] - 04-08-22 00:19:11 - [error] - undefined
+[LOGGER] - 04-08-22 00:19:42 - [error] - undefined
+[LOGGER] - 04-08-22 00:21:05 - [error] - undefined
+[LOGGER] - 04-08-22 00:49:07 - [error] - undefined
+[LOGGER] - 04-08-22 00:51:42 - [error] - undefined
+[LOGGER] - 04-08-22 00:52:18 - [error] - undefined
+[LOGGER] - 04-08-22 00:54:45 - [error] - undefined
+[LOGGER] - 04-08-22 00:55:49 - [error] - undefined
+[LOGGER] - 04-08-22 00:57:40 - [error] - undefined
+[LOGGER] - 04-08-22 01:02:35 - [error] - undefined
+[LOGGER] - 04-08-22 01:02:53 - [error] - undefined
+[LOGGER] - 04-08-22 01:11:57 - [error] - undefined
+[LOGGER] - 04-08-22 01:14:54 - [error] - undefined
+[LOGGER] - 04-08-22 01:15:47 - [error] - undefined
+[LOGGER] - 04-08-22 01:15:47 - [error] - undefined
+[LOGGER] - 04-08-22 01:27:49 - [error] - undefined
+[LOGGER] - 04-08-22 01:27:49 - [error] - undefined
+[LOGGER] - 04-08-22 01:27:49 - [error] - undefined
+[LOGGER] - 04-08-22 01:28:15 - [error] - undefined
+[LOGGER] - 04-08-22 01:28:15 - [error] - undefined
+[LOGGER] - 04-08-22 01:28:15 - [error] - undefined
