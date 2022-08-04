@@ -1,18 +1,12 @@
 const ProductRouter = require('express').Router();
-const { getProducts, createProduct, updateProduct, deleteProduct } = require('../controllers/Product.Controllers');
+const ProductController = require('../controllers/Product.controller');
 const { uploadImgProd } = require("../middlewares/multer.middleware");
-const validatorSchema = require('../middlewares/validatorSchema.middleware');
-const {
-  getProductSchema,
-  createProductSchema,
-  updateProductSchema,
-} = require('../schemas/product.schema');
 
-ProductRouter.get('/:id?', getProducts)
-ProductRouter.post('/',uploadImgProd.single('thumbnail'), validatorSchema(createProductSchema),createProduct)
+ProductRouter.get('/:id?', ProductController.getProducts)
+ProductRouter.post('/',uploadImgProd.single('thumbnail'), ProductController.createProduct)
 
-ProductRouter.patch('/edit/:id',uploadImgProd.single('thumbnail'), validatorSchema(getProductSchema),validatorSchema(updateProductSchema), updateProduct );
+ProductRouter.patch('/edit/:id',uploadImgProd.single('thumbnail'), ProductController.updateProduct);
 
-ProductRouter.delete('/:id', deleteProduct );
+ProductRouter.delete('/:id', ProductController.deleteProduct );
 
 module.exports = ProductRouter;

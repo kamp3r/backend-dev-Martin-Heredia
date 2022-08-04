@@ -1,13 +1,12 @@
 const cartRouter = require('express').Router();
-const { createAdd, clearCart, buy, deleteProduct } = require('../controllers/Cart.Controllers');
+const CartController = require('../controllers/Cart.Controllers');
 
-cartRouter.post('/add/:id', createAdd);
+cartRouter.post('/add/:id', CartController.createAdd);
 
+cartRouter.post('/clearCart', CartController.clearCart);
 
-cartRouter.post('/clearCart', clearCart);
+cartRouter.post('/buy', CartController.buy);
 
-cartRouter.post('/buy', buy);
-
-cartRouter.delete('/delete/:id', deleteProduct);
+cartRouter.delete('/delete/:id', CartController.deleteProduct);
 
 module.exports = cartRouter;

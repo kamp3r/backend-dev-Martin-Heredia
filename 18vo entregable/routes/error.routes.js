@@ -1,6 +1,6 @@
-// const errorRouter = require('express').Router();
-// const errorHandler = require('../controllers/Error.Controllers');
+const errorRouter = require('express').Router();
+const errorHandler = require('../controllers/Error.Controllers');
 
-// errorRouter.get('*', errorHandler);
+errorRouter.get('*', errorHandler);
 
-// module.exports = errorRouter;
+module.exports = errorRouter;

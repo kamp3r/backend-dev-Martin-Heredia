@@ -1,7 +1,7 @@
 const ejsRouter = require("express").Router();
-const isAuthenticated = require("../middlewares/auth.middleware");
+const AuthUser = require('../middlewares/authUser.js');
 const {
-  redirectHome,
+  redirectLogin,
   viewHome,
   viewProduct,
   viewRegister,
@@ -18,34 +18,34 @@ const {
   viewAdminUpdateProduct,
 } = require("../controllers/views.controllers");
 
-ejsRouter.get("/", redirectHome);
+ejsRouter.get("/", redirectLogin);
 
-ejsRouter.get("/home", viewHome);
+ejsRouter.get("/home",AuthUser, viewHome);
 
-ejsRouter.get("/products", viewProduct);
+ejsRouter.get("/products",AuthUser, viewProduct);
 
 ejsRouter.get("/register", viewRegister);
 
 ejsRouter.get("/login", viewLogin);
 
-ejsRouter.get("/profile", isAuthenticated, viewProfile);
+ejsRouter.get("/profile", AuthUser, viewProfile);
 
-ejsRouter.get("/editProfile", isAuthenticated, viewEditProfile);
+ejsRouter.get("/editProfile", AuthUser, viewEditProfile);
 
-ejsRouter.get("/logout", isAuthenticated, viewLogout);
+ejsRouter.get("/logout", AuthUser, viewLogout);
 
-ejsRouter.get("/about", viewAbout);
+ejsRouter.get("/about",AuthUser, viewAbout);
 
-ejsRouter.get("/contact", viewContact);
+ejsRouter.get("/contact",AuthUser, viewContact);
 
-ejsRouter.get("/detail/:id", viewProductDetail);
+ejsRouter.get("/detail/:id",AuthUser, viewProductDetail);
 
-ejsRouter.get("/myCart/checkout", viewCheckout);
+ejsRouter.get("/myCart/checkout",AuthUser, viewCheckout);
 
-ejsRouter.get("/admin", viewAdmin);
+ejsRouter.get("/admin",AuthUser, viewAdmin);
 
-ejsRouter.get("/admin/addProduct", viewAdminProduct);
+ejsRouter.get("/admin/addProduct",AuthUser, viewAdminProduct);
 
-ejsRouter.get("/editProduct/:id", viewAdminUpdateProduct);
+ejsRouter.get("/editProduct/:id",AuthUser, viewAdminUpdateProduct);
 
 module.exports = ejsRouter;

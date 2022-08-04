@@ -1,40 +1,45 @@
-const { productHandler } = require("../daos");
+const ProductService = require("../services/ProductService");
 
-const redirectHome = (req, res) => {
-  res.redirect("/home");
+const redirectLogin = (req, res) => {
+  if(!req.user) {
+    res.redirect("/login");
+  }
 };
 
 const viewHome = (req, res) => {
   res.render("home", {
     title: "home",
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
 const viewProduct = async (req, res) => {
-  const products = await productHandler.getProducts();
+  const products = await ProductService.getAll();
   res.render("products", {
     products,
     title: "products",
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
 const viewRegister = (req, res) => {
+  if(!req.cookies.token) {
   res.render("register", {
     title: "register",
     user: req.user,
-    cart: req.session.cart,
   });
+  }else{
+    res.redirect("/profile");
+  }
 };
 
 const viewLogin = (req, res) => {
   res.render("login", {
     title: "login",
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
@@ -42,7 +47,7 @@ const viewProfile = (req, res) => {
   res.render("profile", {
     title: "profile",
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
@@ -51,16 +56,16 @@ const viewEditProfile = (req, res) => {
     PATCH: true,
     title: "editProfile",
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
-const viewLogout = (req, res) => {
-  res.clearCookie("turbinasunmira");
+const viewLogout = (req, res, next) => {
+  res.clearCookie("token");
+  res.clearCookie("cart");
   res.render("logout", {
     title: "logout",
     user: req.user,
-    cart: req.session.cart,
   });
   req.logout((err) => {
     if (err) {
@@ -73,7 +78,7 @@ const viewAbout = (req, res) => {
   res.render("about", {
     title: "about",
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
@@ -81,38 +86,38 @@ const viewContact = (req, res) => {
   res.render("contact", {
     title: "contact",
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
 const viewProductDetail = async (req, res) => {
-  const product = await productHandler.getProductById(req.params.id);
+  const product = await ProductService.getById(req.params.id);
   res.render("productDetail", {
     product,
     title: `${product.name}`,
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
 const viewCheckout = (req, res) => {
-  if (req.session.cart == undefined) {
-    req.session.cart = [];
+  if (req.cookies.cart == undefined) {
+    req.cookies.cart = [];
   }
   res.render("checkout", {
     title: "checkout",
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
 const viewAdmin = async (req, res) => {
-  const products = await productHandler.getProducts();
+  const products = await ProductService.getAll();
   res.render("admin", {
     products,
     title: "admin",
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
@@ -120,23 +125,23 @@ const viewAdminProduct = (req, res) => {
   res.render("addProducts", {
     title: "addProducts",
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
 const viewAdminUpdateProduct = async (req, res) => {
-  const product = await productHandler.getProductById(req.params.id);
+  const product = await ProductService.getById(req.params.id);
   res.render("updateProd", {
     PATCH: true,
     product,
     title: "updateProd",
     user: req.user,
-    cart: req.session.cart,
+    cart: req.cookies.cart,
   });
 };
 
 module.exports = {
-  redirectHome,
+  redirectLogin,
   viewHome,
   viewProduct,
   viewRegister,

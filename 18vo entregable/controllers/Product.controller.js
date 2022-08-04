@@ -17,12 +17,15 @@ class ProductController {
         return res.status(200).json(products);
       }
     } catch (err) {
-      console.log(err);
       logger.error('Error retrieving products');
     }
   }
   async createProduct(req, res, next) {
     try {
+      if(!req.file){
+        const product = await ProductService.create(req.body);
+        return res.status(201).json(product).redirect('/admin');
+      }else{
       const data = {
         title: req.body.title,
         description: req.body.description,
@@ -31,8 +34,9 @@ class ProductController {
         code: req.body.code,
         stock: req.body.stock,
       };
-      await ProductService.create(data);
-      res.status(201).redirect('/admin');
+       const product = await ProductService.create(data);
+      res.status(201).json(product).redirect('/admin');
+    }
     } catch (error) {
       next(error);
     }
@@ -50,19 +54,19 @@ class ProductController {
         productInfo.thumbnail = req.file.filename;
       }
       const updatedAt = new Date();
-      await ProductService.update(req.params.id, {
+      const updated = await ProductService.update(req.params.id, {
         ...productInfo,
         updatedAt,
       });
-      res.status(200).redirect('/admin');
+      res.status(200).json(updated).redirect('/admin');
     } catch (error) {
       next(error);
     }
   }
   async deleteProduct(req, res, next) {
     try {
-      await ProductService.delete(req.params.id);
-      res.status(200).redirect('/admin');
+      const toBeDeleted = await ProductService.delete(req.params.id);
+      res.status(200).json(toBeDeleted).redirect('/admin');
     } catch (error) {
       next(error);
     }

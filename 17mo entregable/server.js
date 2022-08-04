@@ -1,7 +1,7 @@
 const express = require("express");
 const appMiddleware = require("./middlewares/app.middleware");
 const { PORT } = require("./config/config");
-const { connect } = require("./sockets/sockets.js");
+// const { connect } = require("./sockets/sockets.js");
 const logger = require("./utils/logger/logger.js");
 const os = require("os");
 const HttpServer = require("http").Server;
@@ -25,7 +25,7 @@ if (cluster.isPrimary && clusterProcess) {
 } else {
   appMiddleware(app);
   const httpServer = new HttpServer(app);
-  connect(httpServer);
+  // connect(httpServer);
 
   httpServer.listen(PORT, () =>
     logger.info(

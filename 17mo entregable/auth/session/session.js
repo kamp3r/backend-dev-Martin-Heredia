@@ -1,6 +1,6 @@
 const MongoStore = require('connect-mongo');
 const session = require('express-session');
-const { URI } = require('../../db/index.db');
+const URI = require('../../db/uriDB');
 
 const connectSession = (app) => {
   app.use(

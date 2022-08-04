@@ -12,7 +12,8 @@ const configuration = {
     mail: process.env.MAIL,
     mailPass: process.env.MAILPASS,
     twilioSID: process.env.TWILIOSID,
-    twilioTKN: process.env.TWILIOTOKEN
+    twilioTKN: process.env.TWILIOTOKEN,
+    persistence: process.env.PERSISTENCE
 }
 
 const { PORT } = yargs(hideBin(process.argv)).alias({

@@ -75,14 +75,14 @@ class MongoDB extends InterfaceDao {
     if (!productToUpdate) {
       throw new Error('No product found');
     }
-    return { message: 'Product updated' };
+    return { message: `Product with ${id} updated`, product: productToUpdate };
   }
   async delete(id) {
     const deletedProduct = await this.collection.findByIdAndDelete(id);
     if (!deletedProduct) {
-      throw boom.notFound('No product found');
+      throw new Error('No product found');
     }
-    return { message: `Product with ${id} deleted` };
+    return { message: `Product with ID:${id} has been deleted` };
   }
 }
 
