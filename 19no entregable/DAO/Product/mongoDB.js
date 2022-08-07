@@ -33,14 +33,14 @@ class MongoDB extends InterfaceDao {
       });
       return product;
     } catch (err) {
-      throw boom.badRequest(err);
+      throw new Error(err);
     }
   }
   async readAll() {
     const products = await this.collection.find({});
     const productsArray = products.map((product) => {
       return {
-        id: product._id,
+        _id: product._id,
         title: product.title,
         price: product.price,
         thumbnail: product.thumbnail,

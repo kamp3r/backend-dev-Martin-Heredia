@@ -9,4 +9,6 @@ ProductRouter.patch('/edit/:id',uploadImgProd.single('thumbnail'), ProductContro
 
 ProductRouter.delete('/:id', ProductController.deleteProduct );
 
+
+
 module.exports = ProductRouter;

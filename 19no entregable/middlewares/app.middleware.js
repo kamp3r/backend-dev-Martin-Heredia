@@ -10,23 +10,25 @@ const passport = require('passport');
 const connectSession = require('../auth/session/session.js');
 const cookieParser = require('cookie-parser');
 const sessionStorage = require('../middlewares/storage.js');
+const graphiqlLayer = require('../graphql/');
 
 const connectMiddleware = (app) => {
-  app.use(cors())
+  app.use(cors());
   app.use(express.static('public'));
   app.set('view engine', 'ejs');
   app.set('views', './public/views');
   app.use(express.json());
-  app.use(express.urlencoded({ extended: true })); 
+  app.use(express.urlencoded({ extended: true }));
   app.use(methodOverride('_method'));
-  app.use(methodOverride('_action'))
-  app.use(cookieParser())
+  app.use(methodOverride('_action'));
+  app.use(cookieParser());
   require('../auth/strategies/local.strategy.js');
   connectSession(app);
   app.use(passport.initialize());
   app.use(passport.session());
   sessionStorage(app);
   routerAPI(app);
+  graphiqlLayer(app);
   app.use(logErrors);
   app.use(boomErrorHandler);
 };

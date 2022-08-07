@@ -235,3 +235,26 @@ Require stack:
 [LOGGER] - 04-08-22 01:28:15 - [error] - undefined
 [LOGGER] - 04-08-22 01:28:15 - [error] - undefined
 [LOGGER] - 04-08-22 01:28:15 - [error] - undefined
+[LOGGER] - 06-08-22 21:50:45 - [error] - Error loading Product persistence Përsistence.getInstance is not a function
+[LOGGER] - 06-08-22 21:50:45 - [error] - Error loading User persistence Përsistence.getInstance is not a function
+[LOGGER] - 06-08-22 21:50:45 - [error] - Error loading Order persistence Përsistence.getInstance is not a function
+[LOGGER] - 06-08-22 21:51:39 - [error] - Error loading Order persistence instance is not defined
+[LOGGER] - 06-08-22 21:52:40 - [error] - undefined
+[LOGGER] - 06-08-22 21:54:27 - [error] - undefined
+[LOGGER] - 06-08-22 21:55:19 - [error] - Error:  data and hash arguments required
+[LOGGER] - 06-08-22 22:00:58 - [error] - Error:  data and hash arguments required
+[LOGGER] - 06-08-22 22:01:59 - [error] - Error:  data and hash arguments required
+[LOGGER] - 06-08-22 22:03:21 - [error] - Error:  data and hash arguments required
+[LOGGER] - 06-08-22 22:03:58 - [error] - Error:  data and hash arguments required
+[LOGGER] - 06-08-22 22:06:02 - [error] - Error:  data and hash arguments required
+[LOGGER] - 06-08-22 22:06:51 - [error] - Error:  data and hash arguments required
+[LOGGER] - 06-08-22 22:11:30 - [error] - Error:  User not found
+[LOGGER] - 06-08-22 22:12:10 - [error] - Error:  User not found
+[LOGGER] - 06-08-22 22:12:26 - [error] - Error:  User not found
+[LOGGER] - 06-08-22 22:13:03 - [error] - Error:  User not found
+[LOGGER] - 06-08-22 22:13:51 - [error] - Error:  User not found
+[LOGGER] - 06-08-22 22:14:29 - [error] - Error:  User not found
+[LOGGER] - 06-08-22 22:14:57 - [error] - Error:  User not found
+[LOGGER] - 06-08-22 22:15:34 - [error] - Error:  data and hash arguments required
+[LOGGER] - 06-08-22 22:16:59 - [error] - Error:  User not found
+[LOGGER] - 06-08-22 22:17:11 - [error] - Error:  data and hash arguments required

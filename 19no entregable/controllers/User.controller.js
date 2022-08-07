@@ -30,6 +30,7 @@ class UserController {
         password: req.body.password,
       };
       const user = await UserService.getBy(data.email);
+      console.log(user)
       if (!user) {
         throw new Error('User not found');
       }

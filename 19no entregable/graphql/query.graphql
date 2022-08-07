@@ -1,0 +1,55 @@
+mutation{
+  createProduct(data:{
+    title:"Vinito rico",
+    description:"Bien fresco, se toma mejor",
+    code:"sku988",
+    thumbnail:"https://st.depositphotos.com/2041581/1975/i/450/depositphotos_19750459-stock-photo-red-wine-and-a-bottle.jpg",
+    price: 660,
+    stock: 10
+  }) {
+    title
+    description
+    code
+    thumbnail
+    price
+    stock
+    createdAt
+    updatedAt
+  }
+}
+
+query{
+  getProducts
+  {
+    _id,
+  	title,
+    price,
+    stock,
+    thumbnail
+  }
+}
+
+query{
+  getProductBy(_id:"9b63136c-a405-4016-90b5-63095c81c4d5"
+  ){
+    title,
+    price
+  }
+}
+
+mutation{
+  updateProduct(_id:"77003ba1-1159-47bf-9854-3d79ef27e7ce", data:{
+   	description:"Mejor vino del año"
+  })
+  {
+    title
+  }
+}
+
+mutation{
+  deleteProduct(_id:"dc2a6cbe-bd9c-47d0-8cb7-2bc5f702960d")
+	{title}
+}
+
+
+
