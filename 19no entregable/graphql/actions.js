@@ -1,19 +1,19 @@
 const ProductService = require('../services/ProductService');
 
 module.exports = {
-    getProductBy: (id) =>{
-        return ProductService.getById(id);
+    getProductBy: async (id) =>{
+        return await ProductService.getById(id);
     },
-    getProducts: () =>{
-        return ProductService.getAll();
+    getProducts: async() =>{
+        return await ProductService.getAll();
     },
-    createProduct: ({data}) =>{
-        return ProductService.create(data);
+    createProduct: async({data}) =>{
+        return await ProductService.create(data);
     },
-    updateProduct: (id, {data}) =>{
-        return ProductService.update(id, data);
+    updateProduct: async (id, {data}) =>{
+        return await ProductService.update(id, data);
     },
-    deleteProduct: (id) =>{
+    deleteProduct: async(id) =>{
         return ProductService.delete(id);
     }
 }

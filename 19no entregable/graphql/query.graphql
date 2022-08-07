@@ -30,7 +30,7 @@ query{
 }
 
 query{
-  getProductBy(_id:"9b63136c-a405-4016-90b5-63095c81c4d5"
+  getProductBy(_id:"77003ba1-1159-47bf-9854-3d79ef27e7ce"
   ){
     title,
     price
@@ -39,17 +39,29 @@ query{
 
 mutation{
   updateProduct(_id:"77003ba1-1159-47bf-9854-3d79ef27e7ce", data:{
-   	description:"Mejor vino del año"
+   	title: "Vino Alamos ed. Limitada",
+    description: "El mejor vino del año 2020",
+    code: "sku19",
+    thumbnail: "https://st.depositphotos.com/2041581/1975/i/450/depositphotos_19750459",
+    price: 456
+    stock: 123
   })
   {
-    title
+    title,
+    description,
+    code,
+    thumbnail,
+    price,
+    stock
   }
 }
 
 mutation{
-  deleteProduct(_id:"dc2a6cbe-bd9c-47d0-8cb7-2bc5f702960d")
-	{title}
+  deleteProduct(_id:"41394720-f24b-4036-bc72-4329c257f3c4")
+	{
+    title,
+    code,
+  }
 }
-
 
 
