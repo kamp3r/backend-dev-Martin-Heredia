@@ -13,6 +13,7 @@
     "sails-hook-grunt": "^5.0.0",
     "sails-hook-orm": "^4.0.0",
     "sails-hook-sockets": "^2.0.0",
+    "sails-local-fs": "^0.9.11",
     "sails-mongo": "^2.0.0"
   },
   "devDependencies": {
