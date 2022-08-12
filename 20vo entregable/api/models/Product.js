@@ -9,11 +9,11 @@ module.exports = {
 
   attributes: {
     title: { type: 'string', required: true },
-    price: { type: 'number', required: true },
+    price: { type: 'string', required: true },
     thumbnail: { type: 'string', required: true },
     description: { type: 'string', required: true },
     code: { type: 'string', required: true },
-    stock: { type: 'number', required: true },
+    stock: { type: 'string', required: true },
   },
 
 };

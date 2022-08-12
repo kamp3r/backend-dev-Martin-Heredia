@@ -1,36 +1,37 @@
 /**
- * UserController
+ * ProductController
  *
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
+
 module.exports = {
   get: async (req, res) => {
     try {
-      const users = await User.find();
-      if (!users) {
+      const products = await Product.find();
+      if (!products) {
         return res.status(404).send({
-          message: 'No users found',
+          message: 'No products found',
         });
       }
       return res
         .status(200)
-        .send({ success: true, message: 'Users found', data: users });
+        .send({ success: true, message: 'Products found', data: products });
     } catch (err) {
       return res.status(500).json(err);
     }
   },
   getById: async (req, res) => {
     try {
-      const user = await User.findOne({ id: req.params._id });
-      if (!user) {
+      const product = await Product.findOne({ id: req.params._id });
+      if (!product) {
         return res.status(404).send({
-          message: 'No user found',
+          message: 'No product found',
         });
       }
       return res
         .status(200)
-        .send({ success: true, message: 'User found', data: user });
+        .send({ success: true, message: 'Product found', data: product });
     } catch (err) {
       return res.status(500).json(err);
     }
@@ -38,9 +39,9 @@ module.exports = {
   create: async (req, res) => {
     try {
       req
-        .file('picture')
+        .file('thumbnail')
         .upload(
-          { dirname: '../../assets/images/users' },
+          { dirname: '../../assets/images/products' },
           async (err, uploadedFiles) => {
             if (err) {
               return res.status(500).json(err);
@@ -49,14 +50,14 @@ module.exports = {
               return res.badRequest('No file was uploaded');
             }
             sails.log.info(uploadedFiles[0]);
-            const user = await User.create({
+            const product = await Product.create({
               ...req.body,
-              picture: 'uploaded' + uploadedFiles[0].filename,
+              thumbnail: 'uploaded' + uploadedFiles[0].filename,
             });
             return res.status(200).send({
               success: true,
-              message: 'User created',
-              data: user,
+              message: 'Product created',
+              data: product,
             });
           }
         );
@@ -64,19 +65,18 @@ module.exports = {
       return res.status(500).json(err);
     }
   },
-
   update: async (req, res) => {
     try {
-      if (!req.body.picture) {
-        const user = await User.updateOne({ id: req.params._id }, req.body);
+      if (!req.body.thumbnail) {
+        const product = await Product.updateOne({ id: req.params._id }, req.body);
         return res
           .status(200)
-          .send({ success: true, message: 'User updated', data: user });
+          .send({ success: true, message: 'Product updated', data: product });
       }else{
         req
-          .file('picture')
+          .file('thumbnail')
           .upload(
-            { dirname: '../../assets/images/users' },
+            { dirname: '../../assets/images/products' },
             async (err, uploadedFiles) => {
               if (err) {
                 return res.status(500).json(err);
@@ -85,19 +85,17 @@ module.exports = {
                 return res.badRequest('No file was uploaded');
               }
               sails.log.info(uploadedFiles[0]);
-              const user = await User.updateOne({ id: req.params._id }, {...req.body, picture: 'uploaded' + uploadedFiles[0].filename});
+              const product = await Product.updateOne({ id: req.params._id }, {
+                ...req.body,
+                thumbnail: 'uploaded' + uploadedFiles[0].filename,
+              });
               return res.status(200).send({
                 success: true,
-                message: 'User updated',
-                data: user,
+                message: 'Product updated',
+                data: product,
               });
             }
           );
-      }
-      if (!user) {
-        return res.status(404).send({
-          message: 'User not found',
-        });
       }
     } catch (err) {
       return res.status(500).json(err);
@@ -105,17 +103,13 @@ module.exports = {
   },
   delete: async (req, res) => {
     try {
-      const user = await User.destroyOne({ id: req.params._id });
-      if (!user) {
-        return res.status(404).send({
-          message: 'User not found',
-        });
-      }
+      const product = await Product.destroy({ id: req.params._id });
       return res
         .status(200)
-        .send({ success: true, message: 'User deleted', data: user });
+        .send({ success: true, message: 'Product deleted', data: product });
     } catch (err) {
       return res.status(500).json(err);
     }
   }
 };
+

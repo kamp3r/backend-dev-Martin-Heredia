@@ -34,5 +34,17 @@ module.exports.routes = {
   ***************************************************************************/
 
   'GET /api/users': 'UserController.get',
+  'GET /api/users/:_id': 'UserController.getById',
   'POST /api/users': 'UserController.create',
+  'PATCH /api/users/:_id': 'UserController.update',
+  'DELETE /api/users/:_id': 'UserController.delete',
+
+  'GET /api/products': 'ProductController.get',
+  'GET /api/products/:_id': 'ProductController.getById',
+  'POST /api/products': 'ProductController.create',
+  'PATCH /api/products/:_id': 'ProductController.update',
+  'DELETE /api/products/:_id': 'ProductController.delete',
+
+  'GET /api/orders/:_id': 'OrderController.getById',
+  'POST /api/orders': 'OrderController.create',
 };
